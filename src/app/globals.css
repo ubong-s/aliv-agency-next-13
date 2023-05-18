@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-manrope relative min-h-screen  m-auto p-4 lg:p-12 overflow-x-hidden;
+
+  background: white;
+  z-index: 2;
+  max-width: 1920px;
+}
+
+body::before {
+  @apply absolute content-[''] top-0 left-0 w-full h-full opacity-30;
+
+  background: url("../../public/assets/noise.png");
+  z-index: -2;
+}
+
+body::after {
+  @apply absolute content-[''] top-0 left-0 w-full h-full opacity-90 text-ablack;
+
+  background: url("../../public/assets/background.jpeg");
+  background-size: cover;
+  z-index: -1;
+}
+
+a {
+  @apply font-manrope;
+}
+
+.main__container {
+  width: 90%;
+  margin: auto;
+  max-width: 1600px;
+}
+
+.secondary__container {
+  width: 90%;
+  margin: auto;
+  max-width: 1400px;
+}
