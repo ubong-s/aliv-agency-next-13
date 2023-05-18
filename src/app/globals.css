@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  @apply font-manrope font-light;
+}
+
 body {
-  @apply font-manrope relative min-h-screen  m-auto p-4 lg:p-12 overflow-x-hidden;
+  @apply font-manrope font-light tracking-wider relative min-h-screen  m-auto p-4 lg:p-12 overflow-x-hidden;
 
   background: white;
   z-index: 2;
@@ -28,6 +32,15 @@ body::after {
 p,
 a {
   @apply font-manrope  text-sm lg:text-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-manrope font-light;
 }
 
 .main__container {
