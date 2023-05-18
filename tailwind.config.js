@@ -16,6 +16,7 @@ module.exports = {
         "catskill-white": "#F1F5F9;",
         "aqua-haze": "#F1F6F5",
         alabaster: "#F9F9F9",
+        concrete: "#F3F3F3",
         ablack: "#151515",
       },
       height: {

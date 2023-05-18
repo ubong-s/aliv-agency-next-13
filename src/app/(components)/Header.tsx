@@ -3,10 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { menuList } from "@/constants/menuList";
-import { Bars, Logo, Close } from "@/components";
+import { Bars, Logo, Close, CustomLink } from "@/components";
 
 export const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = (): void => setMenuOpen(!menuOpen);
   const closeMenu = (): void => setMenuOpen(false);
@@ -31,15 +31,14 @@ export const Header = () => {
               menuOpen && "opacity-100 z-10 "
             }`}
           >
-            {menuList.map(({ id, link, text }) => (
-              <li key={id}>
-                <a
-                  href={link}
-                  className="relative uppercase text-sm text-white lg:capitalize lg:text-ablack lg:text-base after:absolute after:content-[''] after:-bottom-1 after:left-0 after:w-0 after:h-1px after:bg-white after:invisible lg:after:bg-ablack  hover:after:w-full hover:after:visible hover:after:transition-all"
+            {menuList.map((link) => (
+              <li key={link.id}>
+                <CustomLink
+                  {...link}
                   onClick={closeMenu}
-                >
-                  {text}
-                </a>
+                  darkBg={true}
+                  uppercase={true}
+                />
               </li>
             ))}
           </ul>

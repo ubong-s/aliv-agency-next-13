@@ -25,8 +25,9 @@ body::after {
   z-index: -1;
 }
 
+p,
 a {
-  @apply font-manrope;
+  @apply font-manrope  text-sm lg:text-base;
 }
 
 .main__container {
