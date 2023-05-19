@@ -21,7 +21,7 @@ export const LinkButton = ({
   return (
     <Link
       href={link}
-      className={`inline-block px-5 py-3 border border-ablack rounded-full  transition-all lg:py-5 lg:px-6 ${
+      className={`inline-block px-4 py-3 border border-ablack rounded-full  transition-all lg:p-4 ${
         variant === "primary"
           ? "bg-black text-white hover:opacity-80"
           : "bg-transparent hover:bg-ablack hover:text-white"

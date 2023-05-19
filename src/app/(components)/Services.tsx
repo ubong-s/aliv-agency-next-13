@@ -16,7 +16,7 @@ export const Services = () => {
               <p className="text-muted pb-4">{description}</p>
               <Link
                 href={`/services/#${link}`}
-                className="inline-block capitalize pb-1 border-b border-b-ablack hover:opacity-50 transition-opacity"
+                className="text-sm inline-block capitalize pb-1 border-b border-b-ablackccccccc"
               >
                 About {title.split(" ")[1]}
               </Link>

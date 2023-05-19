@@ -19,7 +19,7 @@ export const Footer = () => {
   return (
     <footer>
       <div className="main__container">
-        <div className="py-16 grid gap-12 items-start lg:grid-cols-4">
+        <div className="py-16 grid gap-12 items-start lg:grid-cols-4 lg:py-28">
           <div className="grid">
             <Link href="/" className="flex gap-1 mb-12">
               <Logo />

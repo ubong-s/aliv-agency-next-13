@@ -10,3 +10,9 @@ export type ServiceProps = {
   description: string;
   link: string;
 };
+
+export type BlogPostProps = {
+  id: number;
+  title: string;
+  slug: string;
+};

@@ -22,7 +22,7 @@ export const Header = () => {
 
           <Link
             href="/jobs"
-            className="px-4 py-2 bg-spanish-white border border-spanish-white rounded-full flex-grow text-center hover:bg-ablack hover:text-white transition-colors  lg:flex-grow-0 "
+            className="inline-block px-4 py-2 bg-spanish-white border border-spanish-white rounded-full flex-grow text-center hover:bg-ablack hover:text-white transition-colors  lg:flex-grow-0 "
             onClick={closeMenu}
           >{`We're hiring`}</Link>
 
@@ -45,7 +45,7 @@ export const Header = () => {
 
           <Link
             href="/contact"
-            className="px-4 py-2 border border-ablack rounded-full flex-grow text-center hover:bg-ablack hover:text-white transition-colors lg:flex-grow-0"
+            className="inline-block px-4 py-2 border border-ablack rounded-full flex-grow text-center hover:bg-ablack hover:text-white transition-colors lg:flex-grow-0"
             onClick={closeMenu}
           >
             {"Let's talk"}
