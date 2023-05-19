@@ -14,17 +14,19 @@ export const Header = () => {
   return (
     <header>
       <div className="main__container">
-        <nav className="flex h-24 items-center gap-6 lg:h-36 ">
+        <nav className="flex h-24 items-center  gap-6 lg:h-36 ">
           <Link href="/" className="flex gap-1" onClick={closeMenu}>
             <Logo />
             aliv
           </Link>
 
-          <Link
-            href="/jobs"
-            className="inline-block px-4 py-2 bg-spanish-white border border-spanish-white rounded-full flex-grow text-center hover:bg-ablack hover:text-white transition-colors  lg:flex-grow-0 "
-            onClick={closeMenu}
-          >{`We're hiring`}</Link>
+          <div className="flex-grow">
+            <Link
+              href="/jobs"
+              className="hidden  px-4 py-2 bg-spanish-white border border-spanish-white rounded-full text-center hover:bg-ablack hover:text-white transition-colors md:inline-block lg:flex-grow-0 "
+              onClick={closeMenu}
+            >{`We're hiring`}</Link>
+          </div>
 
           <ul
             className={`absolute top-28 left-4 right-4 bg-ablack p-8 flex flex-col gap-6 w-85 mx-auto opacity-0 -z-10 transition-all md:w-90  lg:relative lg:top-auto lg:left-auto lg-right-auto lg:bg-transparent lg:p-0 lg:flex-row lg:gap-9 lg:flex-grow lg:justify-end lg:w-auto lg:z-0 lg:opacity-100 lg:translate-y-0 ${
@@ -45,7 +47,7 @@ export const Header = () => {
 
           <Link
             href="/contact"
-            className="inline-block px-4 py-2 border border-ablack rounded-full flex-grow text-center hover:bg-ablack hover:text-white transition-colors lg:flex-grow-0"
+            className="inline-block px-4 py-2 border border-ablack rounded-full text-center hover:bg-ablack hover:text-white transition-colors lg:flex-grow-0"
             onClick={closeMenu}
           >
             {"Let's talk"}

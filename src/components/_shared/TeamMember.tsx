@@ -14,10 +14,10 @@ export const TeamMember = ({ member }: { member: TeamMemberProps }) => {
           alt={name}
           width={376}
           height={546}
-          className="object-cover w-full"
+          className="object-cover w-full h-full"
         />
         {socials && (
-          <ul className="social absolute right-6 bottom-6 flex gap-2 lg:opacity-0  lg:translate-y-52 group-hover:lg:opacity-100 group-hover:lg:translate-y-0 transition-all">
+          <ul className="social absolute right-4 bottom-4 flex gap-2 lg:right-6 lg:bottom-6 lg:opacity-0  lg:translate-y-52 group-hover:lg:opacity-100 group-hover:lg:translate-y-0 transition-all">
             {socials.map(({ network, profileLink }) => (
               <li key={network}>
                 <Link href={profileLink}>
@@ -36,8 +36,8 @@ export const TeamMember = ({ member }: { member: TeamMemberProps }) => {
         )}
       </div>
       <div className=" absolute -bottom-12 flex justify-between items-center w-full">
-        <h4 className="text-sm lg:text-lg">{name}</h4>
-        <span className="inline-block text-xs py-1.5 px-3 border border-ablack rounded-full">
+        <h4 className="text-xs md:text-sm lg:text-lg">{name}</h4>
+        <span className="inline-block text-xs py-1 px-2 border border-ablack rounded-full md:py-1.5 md:px-3">
           {position}
         </span>
       </div>
