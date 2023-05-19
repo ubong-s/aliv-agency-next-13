@@ -3,3 +3,10 @@ export type LinkProps = {
   link: string;
   text: string;
 };
+
+export type ServiceProps = {
+  id: number;
+  title: string;
+  description: string;
+  link: string;
+};

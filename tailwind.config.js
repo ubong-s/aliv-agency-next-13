@@ -18,6 +18,7 @@ module.exports = {
         alabaster: "#F9F9F9",
         concrete: "#F3F3F3",
         ablack: "#151515",
+        muted: "#777777",
       },
       height: {
         "1px": "1px",
