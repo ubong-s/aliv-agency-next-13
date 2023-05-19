@@ -26,6 +26,11 @@ module.exports = {
         85: "85%",
         90: "90%",
         600: "600px",
+        "200%": "200%",
+        "400%": "400%",
+        "500%": "500%",
+        "724px": "724px",
+        "1448px": "1448px",
       },
       fontSize: {
         "48px": ["48px", "48px"],
@@ -37,6 +42,9 @@ module.exports = {
         "8xl": "96rem",
         "9xl": "128rem",
       },
+      flex: {
+        33: "33%",
+      },
       translate: {
         "screen-x": "100vw",
         "screen-y": "100vh",
@@ -44,6 +52,19 @@ module.exports = {
       },
       borderRadius: {
         "4xl": "2rem",
+      },
+      animation: {
+        slide: "slide 8s linear infinite",
+      },
+      keyframes: {
+        slide: {
+          from: {
+            transform: "translateX(0)",
+          },
+          to: {
+            transform: "translateX(-100%)",
+          },
+        },
       },
     },
   },
