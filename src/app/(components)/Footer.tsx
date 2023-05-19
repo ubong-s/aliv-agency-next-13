@@ -36,6 +36,7 @@ export const Footer = () => {
                         alt={text}
                         width={36}
                         height={36}
+                        className="transition-opacity hover:opacity-40"
                       />
                     </Link>
                   </li>

@@ -1,3 +1,4 @@
+import { CustomLink } from "@/components";
 import Link from "next/link";
 
 export const FooterCopyright = () => {
@@ -30,8 +31,8 @@ export const FooterCopyright = () => {
         </Link>
       </p>
       <div className="flex gap-8">
-        <Link href="#">Privacy</Link>
-        <Link href="#">Imprint</Link>
+        <CustomLink link="#" text="Privacy" />
+        <CustomLink link="#" text="Imprint" />
       </div>
     </div>
   );

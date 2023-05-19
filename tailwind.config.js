@@ -25,10 +25,13 @@ module.exports = {
       width: {
         85: "85%",
         90: "90%",
+        600: "600px",
       },
       fontSize: {
         "48px": ["48px", "48px"],
+        "52px": ["52px", "52px"],
         "64px": ["64px", "64px"],
+        "96px": ["96px", "96px"],
       },
       spacing: {
         "8xl": "96rem",
