@@ -1,4 +1,4 @@
-import { LinkButton } from "@/components";
+import { LinkButton, SectionHeading } from "@/components";
 import { blogList } from "@/constants/blogList";
 import Image from "next/image";
 import placeholderImage from "../../../public/assets/blog-image.png";
@@ -7,14 +7,11 @@ import Link from "next/link";
 export const Blog = () => {
   return (
     <section className="main__container py-20 lg:py-36">
-      <h2 className="uppercase pb-2 border-b border-b-concrete">Blog</h2>
-
-      <div className="flex justify-between items-center my-8 lg:my-12">
-        <p className="text-4xl lg:text-48px">Insights on Branding</p>
-        <span className="hidden lg:inline-block">
-          <LinkButton variant="outline" link="/blog" linkText="See all" />
-        </span>
-      </div>
+      <SectionHeading
+        title="Blog"
+        subtitle="Insights on Branding"
+        cta={{ link: "/blog", text: "See all" }}
+      />
 
       <ul className="grid grid-cols-2 gap-8 lg:grid-cols-4">
         {blogList.map(({ id, title, slug }) => (

@@ -16,3 +16,13 @@ export type BlogPostProps = {
   title: string;
   slug: string;
 };
+
+export type TeamMemberProps = {
+  id: number;
+  name: string;
+  position: string;
+  socials?: {
+    network: string;
+    profileLink: string;
+  }[];
+};

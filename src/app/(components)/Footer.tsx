@@ -2,18 +2,11 @@ import { CustomLink, Logo } from "@/components";
 import { social_list } from "@/constants/socialList";
 import Image from "next/image";
 import Link from "next/link";
-import facebook from "../../../public/assets/icons/facebook.svg";
-import twitter from "../../../public/assets/icons/twitter.svg";
-import instagram from "../../../public/assets/icons/instagram.svg";
+
 import { fillerList, infoList, menuList } from "@/constants/menuList";
 import { FooterColumn } from "./FooterColumn";
 import { FooterCopyright } from "./FooterCopyright";
-
-const SocialImages = {
-  facebook,
-  twitter,
-  instagram,
-};
+import { SocialIconsLight } from "@/constants/socialIcons";
 
 export const Footer = () => {
   return (
@@ -32,7 +25,7 @@ export const Footer = () => {
                     <Link href={link}>
                       <Image
                         //@ts-ignore
-                        src={SocialImages[text]}
+                        src={SocialIconsLight[text]}
                         alt={text}
                         width={36}
                         height={36}

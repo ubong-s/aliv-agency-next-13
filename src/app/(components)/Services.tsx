@@ -6,7 +6,7 @@ export const Services = () => {
     <section id="services" className="pb-20">
       <h2></h2>
       <div className="main__container">
-        <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {servicesHome.map(({ id, title, description, link }) => (
             <li
               key={id}
@@ -16,7 +16,7 @@ export const Services = () => {
               <p className="text-muted pb-4">{description}</p>
               <Link
                 href={`/services/#${link}`}
-                className="text-sm inline-block capitalize pb-1 border-b border-b-ablackccccccc"
+                className="text-sm inline-block capitalize pb-1 border-b border-b-ablack self-end"
               >
                 About {title.split(" ")[1]}
               </Link>
