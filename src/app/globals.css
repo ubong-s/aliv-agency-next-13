@@ -57,3 +57,22 @@ h6 {
   margin: auto;
   max-width: 1400px;
 }
+
+.value__box:nth-of-type(2) {
+  @apply bg-aqua-haze;
+}
+.value__box:nth-of-type(3) {
+  @apply bg-alabaster;
+}
+
+.value__box:nth-of-type(4) {
+  @apply bg-alabaster xl:row-start-2 xl:col-start-2;
+}
+
+.value__box:nth-of-type(5) {
+  @apply bg-spanish-white xl:row-start-2 xl:col-start-3;
+}
+
+.value__box:nth-of-type(6) {
+  @apply bg-early-dawn xl:row-start-2 xl:col-start-4;
+}

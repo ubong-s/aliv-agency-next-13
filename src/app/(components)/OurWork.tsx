@@ -6,7 +6,7 @@ import { projectsList } from "@/constants/projectsList";
 
 export const OurWork = () => {
   return (
-    <section className="main__container pt-10 pb-20 lg:py-36">
+    <section className="main__container py-10 lg:py-28">
       <SectionHeading
         title="Our Work"
         subtitle="Selected Work"

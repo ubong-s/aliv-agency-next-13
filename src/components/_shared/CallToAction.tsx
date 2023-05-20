@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { LinkButton } from "./LinkButton";
-import { Link as LinkIcon } from "../icons/Link";
+import { LinkIcon } from "../icons";
 
 interface Props {
   title?: string;
