@@ -26,3 +26,11 @@ export type TeamMemberProps = {
     profileLink: string;
   }[];
 };
+
+export type ProjectProps = {
+  id: number;
+  slug: string;
+  title: string;
+  image: string;
+  category: string;
+};

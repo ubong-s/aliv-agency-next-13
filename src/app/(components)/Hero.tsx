@@ -12,7 +12,7 @@ export const Hero = () => {
           Your Unique Message.
         </p>
         <LinkButton
-          link="/services"
+          link="#services"
           linkText="Our Services"
           variant="primary"
         />

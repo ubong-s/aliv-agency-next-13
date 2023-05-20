@@ -5,6 +5,9 @@
 * {
   @apply font-manrope font-light;
 }
+html {
+  scroll-behavior: smooth !important;
+}
 
 body {
   @apply font-manrope font-light tracking-wider relative min-h-screen  m-auto p-4 lg:p-12 overflow-x-hidden;
@@ -54,5 +57,3 @@ h6 {
   margin: auto;
   max-width: 1400px;
 }
-
-

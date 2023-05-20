@@ -7,6 +7,7 @@ interface Props {
   cta?: {
     text: string;
     link: string;
+    mobile?: boolean;
   };
 }
 
@@ -18,7 +19,7 @@ export const SectionHeading = ({ title, subtitle, cta }: Props) => {
       {subtitle && (
         <div className="flex justify-between items-center my-8 lg:my-12">
           <p className="text-4xl lg:text-48px">{subtitle}</p>
-          <span className="hidden lg:inline-block">
+          <span className={`${cta && !cta.mobile && "hidden"} lg:inline-block`}>
             {cta && cta.link && cta.text && (
               <LinkButton
                 variant="outline"
