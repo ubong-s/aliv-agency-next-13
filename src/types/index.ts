@@ -34,3 +34,23 @@ export type ProjectProps = {
   image: string;
   category: string;
 };
+
+export interface ServicePayload {
+  _id: string;
+  _createdAt: Date;
+  name: string;
+  slug: string;
+  coverImage: string;
+  headline: string;
+  features: {
+    description: string;
+    _key: string;
+    title: string;
+    _type: string;
+  }[];
+  cta: {
+    text: string;
+    headline: string;
+    background: string;
+  };
+}

@@ -1,5 +1,1 @@
-import service from "./service.schema";
-
-const schemas = [service];
-
-export default schemas;
+export { service } from "./service.schema";

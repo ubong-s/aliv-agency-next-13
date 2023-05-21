@@ -1,4 +1,4 @@
-const service = {
+export const service = {
   name: "service",
   title: "Services",
   type: "document",
@@ -15,6 +15,11 @@ const service = {
       options: {
         source: "name",
       },
+    },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
     },
     {
       name: "coverImage",
@@ -74,6 +79,11 @@ const service = {
           name: "text",
           type: "text",
           title: "Text",
+        },
+        {
+          name: "background",
+          type: "string",
+          title: "Background",
         },
       ],
     },
