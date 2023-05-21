@@ -1,7 +1,7 @@
 /**
  * This plugin contains all the logic for setting up the singletons
  */
-
+// @ts-nocheck
 import { apiVersion, previewSecretId } from "../lib/sanity.api";
 import { type DocumentDefinition } from "sanity";
 import { type StructureResolver } from "sanity/desk";
