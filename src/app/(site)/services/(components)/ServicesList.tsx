@@ -13,7 +13,7 @@ export const ServicesList = ({ services }: { services: ServicePayload[] }) => {
           <div key={_id} className="grid gap-8 lg:gap-16" id={slug}>
             <SectionHeading title={name} />
 
-            <div className="grid gap-12 items-start lg:flex  lg:flex-row-reverse">
+            <div className="relative grid gap-12 items-start lg:flex  lg:flex-row-reverse">
               {/* Image & features */}
               <div className="grid gap-8">
                 <Image
@@ -41,7 +41,7 @@ export const ServicesList = ({ services }: { services: ServicePayload[] }) => {
 
               {/* Call to action */}
               <div
-                className="grid gap-4 items-start justify-items-start p-10 lg:min-w-33%  xl:p-12"
+                className="grid gap-4 items-start justify-items-start p-10 lg:min-w-33%  xl:p-12 lg:sticky lg:top-8"
                 style={{
                   backgroundColor: `${
                     cta.background ? cta.background : "#F9F9F9"
