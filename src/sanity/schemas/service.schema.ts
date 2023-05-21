@@ -9,6 +9,14 @@ const service = {
       type: "string",
     },
     {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "name",
+      },
+    },
+    {
       name: "coverImage",
       title: "Cover Image",
       type: "image",
@@ -49,6 +57,23 @@ const service = {
               title: "Description",
             },
           ],
+        },
+      ],
+    },
+    {
+      name: "cta",
+      title: "CTA",
+      type: "object",
+      fields: [
+        {
+          name: "headline",
+          type: "string",
+          title: "Headline",
+        },
+        {
+          name: "text",
+          type: "text",
+          title: "Text",
         },
       ],
     },
