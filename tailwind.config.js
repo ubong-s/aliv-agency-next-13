@@ -22,7 +22,9 @@ module.exports = {
       },
       height: {
         "1px": "1px",
+        "200px": "200px",
         "250px": "250px",
+        "300px": "300px",
         "376px": "376px",
       },
       width: {

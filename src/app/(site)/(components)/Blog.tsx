@@ -1,7 +1,7 @@
 import { LinkButton, SectionHeading } from "@/components";
 import { blogList } from "@/constants/blogList";
 import Image from "next/image";
-import placeholderImage from "../../../public/assets/blog-image.png";
+import placeholderImage from "../../../../public/assets/blog-image.png";
 import Link from "next/link";
 
 export const Blog = () => {

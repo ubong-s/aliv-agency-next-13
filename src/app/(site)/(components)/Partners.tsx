@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { partnerList } from "@/constants/partnerList";
-import logo_1 from "../../../public/assets/partners/logo_1.svg";
-import logo_2 from "../../../public/assets/partners/logo_2.svg";
-import logo_3 from "../../../public/assets/partners/logo_3.svg";
-import logo_4 from "../../../public/assets/partners/logo_4.svg";
-import logo_5 from "../../../public/assets/partners/logo_5.svg";
-import logo_6 from "../../../public/assets/partners/logo_6.svg";
-import logo_7 from "../../../public/assets/partners/logo_7.svg";
+import logo_1 from "../../../../public/assets/partners/logo_1.svg";
+import logo_2 from "../../../../public/assets/partners/logo_2.svg";
+import logo_3 from "../../../../public/assets/partners/logo_3.svg";
+import logo_4 from "../../../../public/assets/partners/logo_4.svg";
+import logo_5 from "../../../../public/assets/partners/logo_5.svg";
+import logo_6 from "../../../../public/assets/partners/logo_6.svg";
+import logo_7 from "../../../../public/assets/partners/logo_7.svg";
 
 const PartnerImages = {
   logo_1,
