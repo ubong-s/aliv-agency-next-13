@@ -37,7 +37,6 @@ export type ProjectProps = {
 
 export interface ServicePayload {
   _id: string;
-  _createdAt: Date;
   name: string;
   slug: string;
   coverImage: string;
@@ -46,7 +45,6 @@ export interface ServicePayload {
     description: string;
     _key: string;
     title: string;
-    _type: string;
   }[];
   cta: {
     text: string;

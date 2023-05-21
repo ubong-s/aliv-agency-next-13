@@ -7,7 +7,14 @@ export default async function ServicesPage() {
 
   return (
     <>
-      <ServicesHero />
+      <ServicesHero
+        services={services.map((service) => {
+          return {
+            name: service.name,
+            slug: service.slug,
+          };
+        })}
+      />
       <ServicesList services={services} />
       <CallToAction />
     </>
