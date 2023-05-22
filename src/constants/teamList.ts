@@ -1,30 +1,33 @@
-import { TeamMemberProps } from "@/types";
+import { MemberProps } from "@/types";
 
-export const teamList: TeamMemberProps[] = [
+export const teamList: MemberProps[] = [
   {
-    id: 1,
+    _id: "1",
     name: "Annette Black",
-    position: "CTO",
-    socials: [
-      { network: "instagram", profileLink: "#" },
-      { network: "twitter", profileLink: "#" },
-      { network: "facebook", profileLink: "#" },
+    expertise: "CTO",
+    image: "",
+    Socials: [
+      { _type: "social", _key: "1", name: "instagram", url: "#" },
+      { _type: "social", _key: "2", name: "twitter", url: "#" },
+      { _type: "social", _key: "3", name: "facebook", url: "#" },
     ],
   },
   {
-    id: 2,
+    _id: "2",
     name: "Devon Lee",
-    position: "Design",
-    socials: [
-      { network: "instagram", profileLink: "#" },
-      { network: "twitter", profileLink: "#" },
-      { network: "facebook", profileLink: "#" },
+    expertise: "Design",
+    image: "",
+    Socials: [
+      { _type: "social", _key: "1", name: "instagram", url: "#" },
+      { _type: "social", _key: "2", name: "twitter", url: "#" },
+      { _type: "social", _key: "3", name: "facebook", url: "#" },
     ],
   },
   {
-    id: 3,
+    _id: "3",
     name: "Chris Watson",
-    position: "Design",
-    socials: [],
+    expertise: "Design",
+    image: "",
+    Socials: [],
   },
 ];

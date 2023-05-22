@@ -58,6 +58,7 @@ h6 {
   max-width: 1400px;
 }
 
+/* Home Page Value Section */
 .value__box:nth-of-type(2) {
   @apply bg-aqua-haze;
 }
@@ -77,6 +78,7 @@ h6 {
   @apply bg-early-dawn xl:row-start-2 xl:col-start-4;
 }
 
+/* About Page Stats Section */
 .stat__box:nth-of-type(1) {
   @apply bg-aqua-haze;
 }
@@ -94,4 +96,15 @@ h6 {
 
 .stat__box:nth-of-type(5) {
   @apply bg-early-dawn md:col-span-2 2xl:row-start-2 2xl:col-start-3;
+}
+
+/* About Page Team Section */
+.about__team .member:nth-of-type(4) {
+  @apply xl:row-start-2 xl:col-start-2;
+}
+.about__team .member:nth-of-type(5) {
+  @apply xl:row-start-2 xl:col-start-3;
+}
+.about__team .member:nth-of-type(6) {
+  @apply xl:row-start-2 xl:col-start-4;
 }
