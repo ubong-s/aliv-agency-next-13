@@ -35,6 +35,35 @@ export type ProjectProps = {
   category: string;
 };
 
+export interface StatProps {
+  _type: string;
+  _key: string;
+  count: string;
+  title: string;
+  text: string;
+}
+export interface ValueProps {
+  _type: string;
+  _key: string;
+  count: string;
+  title: string;
+  description: string;
+}
+export interface AwardProps {
+  _type: string;
+  _key: string;
+  awardName: string;
+  year: string;
+}
+
+export interface MemberProps {
+  _id: string;
+  name: string;
+  image: string;
+  expertise: string;
+  Socials: { _type: string; _key: string; url: string; name: string }[];
+}
+
 export interface ServicePayload {
   _id: string;
   name: string;
@@ -51,4 +80,16 @@ export interface ServicePayload {
     headline: string;
     background: string;
   };
+}
+
+export interface AboutPagePayload {
+  about: {
+    stats: StatProps[];
+    ourValues: ValueProps[];
+    awards: AwardProps[];
+    heroHighlight: string;
+    heroDescription: string;
+    aboutImage: string;
+  };
+  team: MemberProps[];
 }
