@@ -1,6 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
-import { TeamMemberProps } from "@/types";
 import { Project, SectionHeading } from "@/components";
 import { projectsList } from "@/constants/projectsList";
 
