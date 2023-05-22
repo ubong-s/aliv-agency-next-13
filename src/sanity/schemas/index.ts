@@ -1,1 +1,2 @@
-export { service } from "./service.schema";
+export * from "./documents";
+export * from "./singletons";
