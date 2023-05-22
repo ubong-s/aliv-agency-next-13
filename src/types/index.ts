@@ -45,7 +45,6 @@ export interface StatProps {
 export interface ValueProps {
   _type: string;
   _key: string;
-  count: string;
   title: string;
   description: string;
 }
