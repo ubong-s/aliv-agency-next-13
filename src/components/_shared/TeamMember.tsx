@@ -43,7 +43,7 @@ export const TeamMember = ({ member }: { member: MemberProps }) => {
       </div>
       <div className=" absolute -bottom-12 flex justify-between items-center w-full">
         <h4 className="text-xs md:text-sm lg:text-base">{name}</h4>
-        <span className="inline-block text-xs py-1 px-2 border border-ablack rounded-full md:py-1.5 md:px-3">
+        <span className="inline-block whitespace-nowrap text-xs py-1 px-2 border border-ablack rounded-full md:py-1.5 md:px-3">
           {expertise}
         </span>
       </div>
