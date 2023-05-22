@@ -24,7 +24,7 @@ export const OurValues = () => {
         {valuesData.map(({ id, intro, highlight }) => (
           <div
             key={id}
-            className="value__box flex flex-col items-start justify-between h-200px p-6 md:h-376px xl:p-12 bg-red-200 "
+            className="value__box flex flex-col items-start justify-between h-200px p-6 md:h-376px xl:p-12 "
           >
             <p className="text-xs uppercase md:w-70 xl:w-80">{intro}</p>
             <p className="text-2xl md:w-85 xl:w-90">{highlight}</p>

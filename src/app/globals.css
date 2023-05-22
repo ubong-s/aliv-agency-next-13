@@ -76,3 +76,22 @@ h6 {
 .value__box:nth-of-type(6) {
   @apply bg-early-dawn xl:row-start-2 xl:col-start-4;
 }
+
+.stat__box:nth-of-type(1) {
+  @apply bg-aqua-haze;
+}
+.stat__box:nth-of-type(2) {
+  @apply bg-alabaster;
+}
+
+.stat__box:nth-of-type(3) {
+  @apply bg-alabaster;
+}
+
+.stat__box:nth-of-type(4) {
+  @apply bg-alabaster 2xl:row-start-2 2xl:col-start-2;
+}
+
+.stat__box:nth-of-type(5) {
+  @apply bg-early-dawn md:col-span-2 2xl:row-start-2 2xl:col-start-3;
+}

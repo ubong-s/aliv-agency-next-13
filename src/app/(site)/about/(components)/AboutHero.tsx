@@ -14,10 +14,7 @@ export const AboutHero = ({ data }: AboutHeroProps) => {
   return (
     <section className=" pb-8 lg:pt-12">
       <div className="main__container grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-16">
-        <div
-          className="col-span-1 h-full
-        bg-red-200"
-        >
+        <div className="col-span-1 h-full">
           <Image
             src={aboutImage}
             alt={heroHighlight}
