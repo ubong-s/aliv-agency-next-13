@@ -3,7 +3,7 @@ import { ValueProps } from "@/types";
 export const AboutValues = ({ values }: { values: ValueProps[] }) => {
   return (
     <section className="py-20 lg:py-32">
-      <div className="main__container lg:grid lg:grid-cols-4">
+      <div className="main__container lg:grid lg:grid-cols-4  lg:gap-16 xl:gap-32">
         <h2 className="text-sm uppercase mb-8 lg:col-span-1">Our Values</h2>
         <div className="lg:col-span-3">
           {values.map(({ _key, title, description }) => (

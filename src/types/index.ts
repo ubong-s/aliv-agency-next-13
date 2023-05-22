@@ -49,10 +49,10 @@ export interface ValueProps {
   description: string;
 }
 export interface AwardProps {
-  _type: string;
   _key: string;
   awardName: string;
   year: string;
+  logo: string;
 }
 
 export interface MemberProps {

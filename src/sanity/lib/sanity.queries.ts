@@ -19,7 +19,12 @@ export const aboutPageQuery = groq`
     "aboutImage": aboutImage.asset->url,
     stats,
     ourValues,
-    awards
+    awards[] {
+      _key,
+      awardName,
+      year, 
+      "logo": logo.asset->url
+      }
     },
     "team": *[_type=="teamMember"] |  order(order) {
       _id,
