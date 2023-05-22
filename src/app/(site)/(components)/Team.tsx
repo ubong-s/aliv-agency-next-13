@@ -14,7 +14,7 @@ export const Team = () => {
       <ul className="grid grid-cols-2 gap-y-20 gap-x-8 mb-28 xl:gap-8 xl:grid-cols-4">
         <TeamCTA />
         {teamList.map((member) => (
-          <TeamMember key={member.id} member={member} />
+          <TeamMember key={member._id} member={member} />
         ))}
       </ul>
 

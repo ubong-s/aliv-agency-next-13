@@ -17,16 +17,6 @@ export type BlogPostProps = {
   slug: string;
 };
 
-export type TeamMemberProps = {
-  id: number;
-  name: string;
-  position: string;
-  socials?: {
-    network: string;
-    profileLink: string;
-  }[];
-};
-
 export type ProjectProps = {
   id: number;
   slug: string;
