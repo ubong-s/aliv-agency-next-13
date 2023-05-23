@@ -10,9 +10,9 @@ export const JobsList = ({ jobs = [] }: { jobs: JobPayload[] }) => {
         return (
           <div
             key={_id}
-            className="grid gap-6 justify-items-start py-10 border-b border-b-concrete md:py-16 first-of-type:pt-0 last-of-type:border-b-0 md:grid-cols-2 lg:grid-cols-6 lg:gap-20 xl:gap-32"
+            className="grid gap-6 justify-items-start py-10 border-b border-b-concrete md:py-16 first-of-type:pt-0 last-of-type:border-b-0 md:grid-cols-2 lg:grid-cols-5 lg:gap-16 xl:gap-32"
           >
-            <div className="grid gap-4 lg:col-span-3 ">
+            <div className="grid gap-4 lg:col-span-2">
               <h3 className="text-3xl">{position}</h3>
               <div className="flex gap-4 items-center">
                 <Badge text={type} />
