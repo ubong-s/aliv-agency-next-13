@@ -11,6 +11,14 @@ export const servicesQuery = groq`*[_type =="service"]  |  order(order) {
   cta
 }`;
 
+export const jobsQuery = groq`*[_type =="job"] {
+  _id,
+  position,
+  type,
+  location
+  description 
+}`;
+
 export const aboutPageQuery = groq`
   {
     "about": *[_type =="about"][0] {

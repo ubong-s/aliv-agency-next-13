@@ -1,9 +1,11 @@
 import { CallToAction } from "@/components";
+import { JobsHero } from "./(components)";
 
 export default function JobsPage() {
   return (
     <>
-      <h1>Jobs</h1>
+      <JobsHero />
+      <CallToAction />
     </>
   );
 }

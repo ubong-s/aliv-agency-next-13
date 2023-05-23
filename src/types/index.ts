@@ -71,6 +71,14 @@ export interface ServicePayload {
   };
 }
 
+export interface JobPayload {
+  _id: string;
+  position: string;
+  type: string;
+  location: string;
+  description: string;
+}
+
 export interface AboutPagePayload {
   about: {
     stats: StatProps[];
