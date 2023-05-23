@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 
-export const servicesQuery = groq`*[_type =="service"]  |  order(order) {
+export const servicesQuery = groq`*[_type == "service"]  |  order(order) {
   _id,
   _createdAt,
   name,
@@ -11,11 +11,11 @@ export const servicesQuery = groq`*[_type =="service"]  |  order(order) {
   cta
 }`;
 
-export const jobsQuery = groq`*[_type =="job"] {
+export const jobsQuery = groq`*[_type == "job"] {
   _id,
   position,
   type,
-  location
+  location,
   description 
 }`;
 

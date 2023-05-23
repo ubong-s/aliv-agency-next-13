@@ -5,3 +5,4 @@ export { SectionHeading } from "./SectionHeading";
 export { TeamMember } from "./TeamMember";
 export { TeamCTA } from "./TeamCTA";
 export { Project } from "./Project";
+export { Badge } from "./Badge";
