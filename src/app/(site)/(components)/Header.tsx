@@ -47,7 +47,7 @@ export const Header = () => {
 
           <Link
             href="/contact"
-            className="inline-block px-4 py-2 border border-ablack rounded-full text-center hover:bg-ablack hover:text-white transition-colors lg:flex-grow-0"
+            className="inline-block px-4 py-2 border border-ablack rounded-full text-center hover:bg-ablack hover:text-white transition-colors lg:px-6 lg:py-4 lg:flex-grow-0"
             onClick={closeMenu}
           >
             {"Let's talk"}

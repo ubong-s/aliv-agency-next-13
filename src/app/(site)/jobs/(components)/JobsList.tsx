@@ -3,7 +3,7 @@ import { JobPayload } from "@/types";
 
 export const JobsList = ({ jobs = [] }: { jobs: JobPayload[] }) => {
   return (
-    <section className="main__container pb-20 lg:pb-36 ">
+    <section className="secondary__container pb-20 lg:pb-36 ">
       {jobs.map((job) => {
         const { _id, position, type, location, description } = job;
 

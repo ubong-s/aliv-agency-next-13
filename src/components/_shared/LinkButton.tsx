@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-interface Props {
+interface LinkProps {
   variant: "outline" | "primary";
   link: string;
   linkText: string;
@@ -19,12 +19,12 @@ export const LinkButton = ({
   onClick,
   icon,
   small,
-}: Props) => {
+}: LinkProps) => {
   return (
     <Link
       href={link}
       className={`inline-block  border border-ablack rounded-full  transition-all ${
-        !small ? "px-4 py-3 lg:p-4" : "py-2 px-3"
+        !small ? "px-4 py-3 lg:px-6 lg:py-4" : "py-2 px-3"
       } ${
         variant === "primary"
           ? "bg-black text-white hover:opacity-80"
