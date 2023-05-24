@@ -1,4 +1,4 @@
-export const WorkHero = () => {
+export const ProjectsHero = () => {
   return (
     <section className="py-16 lg:py-28">
       <div className="secondary__container">

@@ -9,8 +9,8 @@ export function resolveHref(
       return `/about`;
     case "service":
       return `/services`;
-    case "work":
-      return slug ? `/works/${slug}` : undefined;
+    case "project":
+      return slug ? `/projects/${slug}` : undefined;
     case "post":
       return slug ? `/blog/${slug}` : undefined;
     case "products":

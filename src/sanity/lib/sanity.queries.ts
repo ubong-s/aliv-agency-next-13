@@ -43,3 +43,34 @@ export const aboutPageQuery = groq`
     }
   }
 `;
+
+export const projectsQuery = groq`
+  {
+  *[_type == "project"]  |  order(_createdAt asc)  {
+    _id,
+    "image": gallery[0].asset->url,
+    name, 
+    "slug": slug.current,
+    services,
+  }
+`;
+
+export const singleProjectQuery = groq`
+  {
+  *[_type == "project" && slug.current == $slug][0] {
+    _id,
+    gallery[0].asset->url,
+    name, 
+    "slug": slug.current,
+    timeline, 
+    website,
+    services,
+    client {
+      "logo": logo.asset->url,
+      highlight, 
+      fullQuote
+    },
+    info,
+    "gallery": gallery[].asset->url
+  }
+`;

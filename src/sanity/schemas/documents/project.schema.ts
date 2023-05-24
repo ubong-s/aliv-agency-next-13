@@ -8,9 +8,37 @@ export const project = defineType({
   icon: SunIcon,
   fields: [
     defineField({
-      name: "title",
-      title: "Title",
+      name: "name",
+      title: "Name",
       type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "name",
+        isUnique: (value, context) => context.defaultIsUnique(value, context),
+      },
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "timeline",
+      title: "Timeline",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "services",
+      title: "Services",
+      type: "string",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "website",
+      title: "Website",
+      type: "url",
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -18,10 +46,6 @@ export const project = defineType({
       title: "Client",
       type: "object",
       fields: [
-        { name: "name", type: "string", title: "Name" },
-        { name: "timeline", type: "string", title: "Timeline" },
-        { name: "services", type: "string", title: "Services" },
-        { name: "website", type: "string", title: "Website" },
         {
           name: "logo",
           type: "image",

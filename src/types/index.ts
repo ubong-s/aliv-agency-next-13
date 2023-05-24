@@ -53,6 +53,35 @@ export interface MemberProps {
   Socials: { _type: string; _key: string; url: string; name: string }[];
 }
 
+export interface ProjectsPayload {
+  _id: string;
+  name: string;
+  image: string;
+  slug: string;
+  services: string;
+}
+
+export interface SingleProjectPayload {
+  _id: string;
+  name: string;
+  slug: string;
+  image: string;
+  timeline: string;
+  website: string;
+  services: string;
+  client: {
+    logo: string;
+    highlight: string;
+    fullQuote: string;
+  };
+  info: {
+    challenge: string;
+    solution: string;
+    result: string;
+  };
+  gallery: string[];
+}
+
 export interface ServicePayload {
   _id: string;
   name: string;
