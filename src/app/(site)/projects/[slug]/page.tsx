@@ -22,18 +22,38 @@ export async function generateMetadata(
   // fetch data
   const project = await getSingleProject(slug);
 
+  if (project) {
+    return {
+      title: `${project?.name} - Aliv Agency`,
+    };
+  }
+
   return {
-    title: `${project?.name} - Aliv Agency` || "Project - Aliv Agency",
+    title: "Project - Aliv Agency",
   };
 }
 
 export default async function SingleProjectPage({ params }: Props) {
   const project = await getSingleProject(params.slug);
 
+  if (!project) {
+    return null;
+  }
+
   return (
     <>
-      <ProjectIntro />
-      <ProjectDetails />
+      <ProjectIntro services={project.services} client={project.name} />
+      <ProjectDetails
+        details={{
+          client: project.name,
+          timeline: project.timeline,
+          services: project.services,
+          website: project.website,
+          logo: project.client.logo,
+          highlight: project.client.highlight,
+          fullQuote: project.client.fullQuote,
+        }}
+      />
       <ProjectOtherInfo />
       <ProjectGallery />
     </>
