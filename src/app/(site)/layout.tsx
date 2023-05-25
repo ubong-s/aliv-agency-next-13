@@ -5,7 +5,7 @@ import "../globals.css";
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
 
 export const metadata = {
-  title: "Aliv - Building Brands, One Success Story at a Time.",
+  title: "Aliv Agency - Building Brands, One Success Story at a Time.",
   description: "Building Brands, One Success Story at a Time.",
 };
 

@@ -55,10 +55,8 @@ export const projectsQuery = groq`
 `;
 
 export const singleProjectQuery = groq`
-  {
   *[_type == "project" && slug.current == $slug][0] {
     _id,
-    gallery[0].asset->url,
     name, 
     "slug": slug.current,
     timeline, 

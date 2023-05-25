@@ -4,6 +4,7 @@ import {
   jobsQuery,
   projectsQuery,
   servicesQuery,
+  singleProjectQuery,
 } from "./sanity.queries";
 import { createClient } from "next-sanity";
 import type {
@@ -32,7 +33,7 @@ export async function getProjects(): Promise<ProjectsPayload[] | undefined> {
 export async function getSingleProject(
   slug: string
 ): Promise<SingleProjectPayload | undefined> {
-  return await sanityClient().fetch(projectsQuery);
+  return await sanityClient().fetch(singleProjectQuery, { slug });
 }
 
 export async function getJobs(): Promise<JobPayload[] | undefined> {

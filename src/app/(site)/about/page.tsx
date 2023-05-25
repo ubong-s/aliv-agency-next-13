@@ -8,6 +8,10 @@ import {
 } from "./(components)";
 import { getAboutPage } from "@/sanity/lib/sanity.client";
 
+export const metadata = {
+  title: "About - Aliv Agency",
+};
+
 export default async function AboutPage() {
   const aboutPageData = await getAboutPage();
 
