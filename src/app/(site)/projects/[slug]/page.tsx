@@ -1,3 +1,5 @@
+export const revalidate = 600;
+
 import { Metadata, ResolvingMetadata } from "next";
 import { getSingleProject } from "../../../../sanity/lib/sanity.client";
 import {
