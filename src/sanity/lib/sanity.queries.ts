@@ -45,7 +45,6 @@ export const aboutPageQuery = groq`
 `;
 
 export const projectsQuery = groq`
-  {
   *[_type == "project"]  |  order(_createdAt asc)  {
     _id,
     "image": gallery[0].asset->url,

@@ -3,7 +3,7 @@ import { LinkProps } from "@/types";
 export const menuList: LinkProps[] = [
   {
     id: 1,
-    link: "/work",
+    link: "/projects",
     text: "work",
   },
   {
