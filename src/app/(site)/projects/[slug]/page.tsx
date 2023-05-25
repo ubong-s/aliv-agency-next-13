@@ -1,6 +1,6 @@
-export const revalidate = 600;
+export const revalidate = 1200; // not necessary, just for ISR demonstration
 
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import { getSingleProject } from "../../../../sanity/lib/sanity.client";
 import {
   ProjectDetails,
@@ -10,29 +10,16 @@ import {
 } from "./(components)";
 import { CallToAction } from "@/components";
 
-type Props = {
+interface Props {
   params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+}
 
-export async function generateMetadata(
-  { params, searchParams }: Props,
-  parent?: ResolvingMetadata
-): Promise<Metadata> {
-  // read route params
-  const slug = params.slug;
-
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // fetch data
-  const project = await getSingleProject(slug);
-
-  // if (project) {
-  //   return {
-  //     title: `${project.name} - Aliv Agency`,
-  //   };
-  // }
+  const project = await getSingleProject(params.slug);
 
   return {
-    title: "Project - Aliv Agency",
+    title: `${project?.name} - Aliv Agency`,
   };
 }
 
