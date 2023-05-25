@@ -6,6 +6,7 @@ import {
   ProjectIntro,
   ProjectOtherInfo,
 } from "./(components)";
+import { CallToAction } from "@/components";
 
 type Props = {
   params: { slug: string };
@@ -58,7 +59,8 @@ export default async function SingleProjectPage({ params }: Props) {
         }}
       />
       <ProjectOtherInfo info={info} />
-      <ProjectGallery />
+      <ProjectGallery gallery={gallery} name={name} />
+      <CallToAction />
     </>
   );
 }
