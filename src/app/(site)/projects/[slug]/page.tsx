@@ -40,21 +40,24 @@ export default async function SingleProjectPage({ params }: Props) {
     return null;
   }
 
+  const { client, name, timeline, website, gallery, image, info, services } =
+    project;
+
   return (
     <>
-      <ProjectIntro services={project.services} client={project.name} />
+      <ProjectIntro services={services} client={name} />
       <ProjectDetails
         details={{
-          client: project.name,
-          timeline: project.timeline,
-          services: project.services,
-          website: project.website,
-          logo: project.client.logo,
-          highlight: project.client.highlight,
-          fullQuote: project.client.fullQuote,
+          client: name,
+          timeline: timeline,
+          services: services,
+          website: website,
+          logo: client.logo,
+          highlight: client.highlight,
+          fullQuote: client.fullQuote,
         }}
       />
-      <ProjectOtherInfo />
+      <ProjectOtherInfo info={info} />
       <ProjectGallery />
     </>
   );
