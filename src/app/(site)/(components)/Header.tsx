@@ -17,7 +17,7 @@ export const Header = () => {
         <nav className="flex h-24 items-center  gap-6 lg:h-36 ">
           <Link href="/" className="flex gap-1" onClick={closeMenu}>
             <Logo />
-            aliv
+            <span className="hidden lg:inline-block">aliv</span>
           </Link>
 
           <div className="flex-grow">

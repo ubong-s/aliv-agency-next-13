@@ -25,11 +25,11 @@ export async function generateMetadata(
   // fetch data
   const project = await getSingleProject(slug);
 
-  if (project) {
-    return {
-      title: `${project?.name} - Aliv Agency`,
-    };
-  }
+  // if (project) {
+  //   return {
+  //     title: `${project.name} - Aliv Agency`,
+  //   };
+  // }
 
   return {
     title: "Project - Aliv Agency",
