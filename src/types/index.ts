@@ -1,3 +1,5 @@
+import { PortableTextBlock } from "sanity";
+
 export type LinkProps = {
   id: number;
   link: string;
@@ -118,4 +120,36 @@ export interface AboutPagePayload {
     aboutImage: string;
   };
   team: MemberProps[];
+}
+
+export interface PostPayload {
+  _id: string;
+  title: string;
+  featuredImage: string;
+  excerpt: string;
+  slug: string;
+  categories: string[];
+}
+
+export interface NextPrevProps {
+  featuredImage: string;
+  slug: string;
+  name: string;
+}
+
+export interface SinglePostPayload {
+  current: {
+    _id: string;
+    publishedAt: Date;
+    title: string;
+    excerpt: string;
+    featuredImage: string;
+    body: PortableTextBlock[];
+    categories: string[];
+    tags: string[];
+    author: { name: string; image: string };
+    conclusion: string;
+  };
+  previous?: NextPrevProps;
+  next?: NextPrevProps;
 }

@@ -2,8 +2,10 @@ import { apiVersion, dataset, projectId, useCdn } from "./sanity.api";
 import {
   aboutPageQuery,
   jobsQuery,
+  postsQuery,
   projectsQuery,
   servicesQuery,
+  singlePostQuery,
   singleProjectQuery,
 } from "./sanity.queries";
 import { createClient } from "next-sanity";
@@ -13,6 +15,8 @@ import type {
   JobPayload,
   ProjectsPayload,
   SingleProjectPayload,
+  SinglePostPayload,
+  PostPayload,
 } from "@/types";
 
 /**
@@ -34,6 +38,16 @@ export async function getSingleProject(
   slug: string
 ): Promise<SingleProjectPayload | undefined> {
   return await sanityClient().fetch(singleProjectQuery, { slug });
+}
+
+export async function getPosts(): Promise<PostPayload[] | undefined> {
+  return await sanityClient().fetch(postsQuery);
+}
+
+export async function getSinglePost(
+  slug: string
+): Promise<SinglePostPayload | undefined> {
+  return await sanityClient().fetch(singlePostQuery, { slug });
 }
 
 export async function getJobs(): Promise<JobPayload[] | undefined> {

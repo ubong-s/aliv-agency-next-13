@@ -71,3 +71,40 @@ export const singleProjectQuery = groq`
     "gallery": gallery[].asset->url
   }
 `;
+
+export const postsQuery = groq`
+  *[_type == "post"]  |  order(publishedAt desc)  {
+    _id,
+    "featuredImage": featuredImage.asset->url,
+    title,
+    "slug": slug.current,
+    excerpt,
+    "categories": categories[]->title, 
+  }
+`;
+
+export const singlePostQuery = groq`
+  *[_type == "post" && slug.current == $slug][0]  {
+    "current": {
+      _id,
+    "featuredImage": featuredImage.asset->url,
+    title,
+    "slug": slug.current,
+    excerpt,
+    "categories": categories[]->title, 
+    tags,
+    body,
+    "author": {
+        "name": author->name,
+        "image": author->image.asset->url,
+    },
+    conclusion,
+    },
+    "previous": *[_type == "post" && ^.publishedAt > publishedAt] | order(publishedAt desc)[0]{ 
+      "slug": slug.current, title ,"featuredImage": featuredImage.asset->url
+    },
+    "next": *[_type == "post" && ^.publishedAt < publishedAt] | order(publishedAt asc)[0]{ 
+      "slug": slug.current, title ,"featuredImage": featuredImage.asset->url
+    },
+  }
+`;
