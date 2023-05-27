@@ -2,7 +2,16 @@ import { defineConfig } from "sanity";
 import { visionTool } from "@sanity/vision";
 import { deskTool } from "sanity/desk";
 import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
-import { service, about, teamMember, job, project } from "@/sanity/schemas";
+import {
+  service,
+  about,
+  teamMember,
+  job,
+  project,
+  author,
+  category,
+  post,
+} from "@/sanity/schemas";
 import { pageStructure, singletonPlugin } from "@/sanity/plugins/settings";
 import { productionUrl } from "@/sanity/plugins/productionUrl";
 import { previewDocumentNode } from "@/sanity/plugins/previewPane";
@@ -33,6 +42,9 @@ const config = defineConfig({
       service,
       project,
       teamMember,
+      category,
+      post,
+      author,
     ],
   },
   plugins: [
