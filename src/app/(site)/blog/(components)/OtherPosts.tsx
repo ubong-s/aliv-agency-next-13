@@ -20,17 +20,12 @@ export const OtherPosts = ({
   const [loadedAmount, setLoadedAmount] = useState(posts.length + 1);
   const [loading, setLoading] = useState(false);
 
-  console.log(loadedAmount);
-
   const getMorePosts = async () => {
     setLoading(true);
     let limit = loadedAmount + LOAD_COUNT;
     try {
       const data = await getPosts(loadedAmount, limit);
-
-      console.log(data);
-
-      setLoadedAmount(loadedAmount + LOAD_COUNT);
+      setLoadedAmount(limit);
       setPosts([...posts, ...data.posts]);
       setLoading(false);
     } catch (error) {
@@ -71,7 +66,7 @@ export const OtherPosts = ({
 
       {loading && (
         <div className="mt-12 flex justify-center ">
-          <p className="uppercase">loading More Posts.</p>
+          <p className="uppercase">loading More Posts...</p>
         </div>
       )}
 
