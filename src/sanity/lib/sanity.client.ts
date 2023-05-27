@@ -40,8 +40,16 @@ export async function getSingleProject(
   return await sanityClient().fetch(singleProjectQuery, { slug });
 }
 
-export async function getPosts(): Promise<PostPayload[] | undefined> {
-  return await sanityClient().fetch(postsQuery);
+export async function getPosts(
+  start = 0,
+  end = 7
+): Promise<{ posts: PostPayload[]; total: number }> {
+  const { posts, total } = await sanityClient().fetch(postsQuery, {
+    start,
+    end,
+  });
+
+  return { posts, total };
 }
 
 export async function getSinglePost(

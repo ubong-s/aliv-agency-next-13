@@ -73,13 +73,16 @@ export const singleProjectQuery = groq`
 `;
 
 export const postsQuery = groq`
-  *[_type == "post"]  |  order(publishedAt desc)  {
-    _id,
-    "featuredImage": featuredImage.asset->url,
-    title,
-    "slug": slug.current,
-    excerpt,
-    "categories": categories[]->title, 
+  {
+    "posts": *[_type == "post"]  |  order(publishedAt desc) [$start...$end] {
+      _id,
+      "featuredImage": featuredImage.asset->url,
+      title,
+      "slug": slug.current,
+      excerpt,
+      "categories": categories[]->title, 
+    },
+    "total": count(*[_type == "post"])
   }
 `;
 
