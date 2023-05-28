@@ -2,6 +2,10 @@ import { CallToAction } from "@/components";
 import { FeaturedPost, OtherPosts } from "./(components)";
 import { getPosts } from "@/sanity/lib/sanity.client";
 
+export const metadata = {
+  title: "Blog - Aliv Agency",
+};
+
 export default async function BlogPage() {
   const { posts, total } = await getPosts();
 

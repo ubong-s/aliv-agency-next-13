@@ -159,4 +159,10 @@ export interface SinglePostPayload {
   };
   previous?: NextPrevProps;
   next?: NextPrevProps;
+  relatedPosts: {
+    _id: string;
+    title: string;
+    slug: string;
+    featuredImage: string;
+  }[];
 }

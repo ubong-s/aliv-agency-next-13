@@ -32,7 +32,10 @@ export const PostContent = ({
           />
         </div>
 
-        <div className="py-8  lg:flex lg:gap-28 lg:w-80 lg:mx-auto lg:py-16 xl:w-70 xl:gap-36">
+        <div
+          className="py-8 lg:flex lg:gap-28 lg:mx-auto lg:py-16 xl:gap-36 max-w-4xl"
+          id="content"
+        >
           <ShareButtons
             url={`${SITE_URL}/blog/${slug}`}
             title={title}
@@ -44,7 +47,7 @@ export const PostContent = ({
               <PortableText value={content} />
             </div>
 
-            <div className="bg-alabaster p-8  grid gap-6 md:p-12 lg:p-16 xl:flex xl:gap-20 2xl:gap-24">
+            <div className="bg-alabaster p-8 grid gap-6 md:p-12 lg:p-16 xl:flex xl:gap-20 2xl:gap-24">
               <h4 className="uppercase">Conclusion</h4>
               <div>
                 <p>{conclusion}</p>

@@ -112,5 +112,10 @@ export const singlePostQuery = groq`
     "next": *[_type == "post" && ^.publishedAt < publishedAt] | order(publishedAt asc)[0]{ 
       "slug": slug.current, title ,"featuredImage": featuredImage.asset->url
     },
+    "relatedPosts": *[_type == "post" && !(slug.current match $slug) && count(categories[@._ref in ^.^.categories[]._ref]) > 0] | order(publishedAt desc, _createdAt desc) [0..4] {
+      title,
+      "slug": slug.current,
+      "featuredImage": featuredImage.asset->url
+    }
   }
 `;

@@ -21,7 +21,7 @@ export default async function SingleBlogPage({ params }: Props) {
 
   if (!post) return null;
 
-  const { current, previous, next } = post;
+  const { current, previous, next, relatedPosts } = post;
 
   return (
     <>
@@ -42,10 +42,10 @@ export default async function SingleBlogPage({ params }: Props) {
           content: current.body,
           conclusion: current.conclusion,
           author: current.author,
-          slug:params.slug
+          slug: params.slug,
         }}
       />
-      <RelatedPosts />
+      <RelatedPosts posts={relatedPosts} />
       <CallToAction />
     </>
   );
