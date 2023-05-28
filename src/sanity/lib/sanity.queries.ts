@@ -19,6 +19,40 @@ export const jobsQuery = groq`*[_type == "job"] {
   description 
 }`;
 
+export const homePageQuery = groq`
+  {
+    "home": *[_type == "home"][0] {
+      heroHighlight,
+      ourValues,
+    },
+    "team": *[_type=="teamMember"] |  order(order) [0...3] {
+      _id,
+      name,
+      "image": image.asset->url,
+      expertise,
+      Socials
+    },
+    "projects": *[_type == "project"]  |  order(_createdAt asc) [0...4]  {
+      _id,
+      "image": gallery[0].asset->url,
+      name, 
+      "slug": slug.current,
+      services,
+    },
+    "blog": *[_type == "post"]  |  order(publishedAt desc) [0...4] {
+      _id,
+      "featuredImage": featuredImage.asset->url,
+      title,
+      "slug": slug.current,
+    },
+    "services": *[_type == "service"]  |  order(order) {
+      _id,
+      name,
+      "slug": slug.current,
+      "text" : cta.text,
+    }
+  }
+`;
 export const aboutPageQuery = groq`
   {
     "about": *[_type =="about"][0] {

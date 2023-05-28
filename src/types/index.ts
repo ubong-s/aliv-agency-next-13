@@ -110,18 +110,6 @@ export interface JobPayload {
   description: string;
 }
 
-export interface AboutPagePayload {
-  about: {
-    stats: StatProps[];
-    ourValues: ValueProps[];
-    awards: AwardProps[];
-    heroHighlight: string;
-    heroDescription: string;
-    aboutImage: string;
-  };
-  team: MemberProps[];
-}
-
 export interface PostPayload {
   _id: string;
   title: string;
@@ -141,6 +129,40 @@ export interface AuthorProps {
   name: string;
   image: string;
   expertise: string;
+}
+
+export interface HomePagePayload {
+  home: {
+    heroHighlight: {
+      start: string;
+      end: string;
+    };
+    ourValues: {
+      title: string;
+      highlight: string;
+    }[];
+  };
+  post: Omit<PostPayload, "excerpt" | "slug" | "categories">[];
+  projects: Omit<ProjectsPayload, "services">[];
+  team: MemberProps[];
+  services: {
+    _id: string;
+    name: string;
+    slug: string;
+    text: string;
+  }[];
+}
+
+export interface AboutPagePayload {
+  about: {
+    stats: StatProps[];
+    ourValues: ValueProps[];
+    awards: AwardProps[];
+    heroHighlight: string;
+    heroDescription: string;
+    aboutImage: string;
+  };
+  team: MemberProps[];
 }
 
 export interface SinglePostPayload {

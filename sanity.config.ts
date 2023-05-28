@@ -4,6 +4,7 @@ import { deskTool } from "sanity/desk";
 import { unsplashImageAsset } from "sanity-plugin-asset-source-unsplash";
 import {
   service,
+  home,
   about,
   teamMember,
   job,
@@ -36,6 +37,7 @@ const config = defineConfig({
   schema: {
     types: [
       // Singletons
+      home,
       about,
       // Documents
       job,
@@ -49,7 +51,7 @@ const config = defineConfig({
   },
   plugins: [
     deskTool({
-      structure: pageStructure([about]),
+      structure: pageStructure([home, about]),
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
       defaultDocumentNode: previewDocumentNode({ apiVersion, previewSecretId }),
     }),
