@@ -1,7 +1,13 @@
 import { LinkButton, LinkIcon, SectionHeading } from "@/components";
-import { valuesData } from "@/constants/valuesData";
 
-export const OurValues = () => {
+export const OurValues = ({
+  values,
+}: {
+  values: {
+    title: string;
+    highlight: string;
+  }[];
+}) => {
   return (
     <section className="main__container pt-24 pb-12">
       <SectionHeading title="Our Values" />
@@ -21,13 +27,13 @@ export const OurValues = () => {
           />
         </div>
 
-        {valuesData.map(({ id, intro, highlight }) => (
+        {values.map((value, index) => (
           <div
-            key={id}
+            key={index}
             className="value__box flex flex-col items-start justify-between h-200px p-6 md:h-376px xl:p-12 "
           >
-            <p className="text-xs uppercase md:w-70 xl:w-80">{intro}</p>
-            <p className="text-2xl md:w-85 xl:w-90">{highlight}</p>
+            <p className="text-xs uppercase md:w-70 xl:w-80">{value.title}</p>
+            <p className="text-2xl md:w-85 xl:w-90">{value.highlight}</p>
           </div>
         ))}
       </div>

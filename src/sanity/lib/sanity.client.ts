@@ -1,6 +1,7 @@
 import { apiVersion, dataset, projectId, useCdn } from "./sanity.api";
 import {
   aboutPageQuery,
+  homePageQuery,
   jobsQuery,
   postsQuery,
   projectsQuery,
@@ -17,6 +18,7 @@ import type {
   SingleProjectPayload,
   SinglePostPayload,
   PostPayload,
+  HomePagePayload,
 } from "@/types";
 
 /**
@@ -64,4 +66,8 @@ export async function getJobs(): Promise<JobPayload[] | undefined> {
 
 export async function getAboutPage(): Promise<AboutPagePayload | undefined> {
   return await sanityClient().fetch(aboutPageQuery);
+}
+
+export async function getHomePage(): Promise<HomePagePayload | undefined> {
+  return await sanityClient().fetch(homePageQuery);
 }

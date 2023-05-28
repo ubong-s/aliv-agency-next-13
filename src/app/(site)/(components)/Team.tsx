@@ -1,9 +1,9 @@
 import { SectionHeading, TeamCTA, TeamMember } from "@/components";
-import { teamList } from "@/constants/teamList";
 import { testimonialList } from "@/constants/testimonialList";
+import { MemberProps } from "@/types";
 import Image from "next/image";
 
-export const Team = () => {
+export const Team = ({ team }: { team: MemberProps[] }) => {
   return (
     <section className="main__container pt-10 pb-20 lg:py-36">
       <SectionHeading
@@ -13,7 +13,7 @@ export const Team = () => {
       />
       <ul className="grid grid-cols-2 gap-y-20 gap-x-8 mb-28 xl:gap-8 xl:grid-cols-4">
         <TeamCTA />
-        {teamList.map((member) => (
+        {team.map((member) => (
           <TeamMember key={member._id} member={member} />
         ))}
       </ul>

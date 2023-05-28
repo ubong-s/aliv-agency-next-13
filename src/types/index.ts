@@ -137,13 +137,14 @@ export interface HomePagePayload {
       start: string;
       end: string;
     };
+    heroDescription: string;
     ourValues: {
       title: string;
       highlight: string;
     }[];
   };
   post: Omit<PostPayload, "excerpt" | "slug" | "categories">[];
-  projects: Omit<ProjectsPayload, "services">[];
+  projects: ProjectsPayload[];
   team: MemberProps[];
   services: {
     _id: string;

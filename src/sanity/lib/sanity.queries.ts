@@ -23,6 +23,7 @@ export const homePageQuery = groq`
   {
     "home": *[_type == "home"][0] {
       heroHighlight,
+      heroDescription,
       ourValues,
     },
     "team": *[_type=="teamMember"] |  order(order) [0...3] {
