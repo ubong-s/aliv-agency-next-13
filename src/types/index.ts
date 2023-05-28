@@ -145,6 +145,7 @@ export interface SinglePostPayload {
     excerpt: string;
     featuredImage: string;
     body: PortableTextBlock[];
+    estimatedReadingTime: number;
     categories: string[];
     tags: string[];
     author: { name: string; image: string };

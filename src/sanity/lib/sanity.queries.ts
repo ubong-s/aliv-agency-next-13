@@ -97,6 +97,8 @@ export const singlePostQuery = groq`
     "categories": categories[]->title, 
     tags,
     body,
+    "estimatedReadingTime":round(length(pt::text(body)) / 5 / 180 ),
+    publishedAt,
     "author": {
         "name": author->name,
         "image": author->image.asset->url,

@@ -20,12 +20,10 @@ export const FeaturedPost = ({ post }: { post: PostPayload }) => {
           />
         </div>
         <div className="col-span-1 lg:py-8">
-          <p className="uppercase flex gap-4 items center">
-            {categories.map((category) => (
-              <span key={category}>{category}</span>
-            ))}
-          </p>
-          <h1 className="my-6 text-4xl lg:text-5xl">{title}</h1>
+          <p className="uppercase flex gap-4 items center">{categories[0]}</p>
+          <h1 className="my-6 text-4xl lg:text-5xl lg:!leading-snug">
+            {title}
+          </h1>
           <p className="mb-12 lg:text-lg lg:mb-20 xl:mb-32">{excerpt}</p>
 
           <LinkButton
