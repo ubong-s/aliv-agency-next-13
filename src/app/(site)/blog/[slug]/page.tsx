@@ -1,6 +1,7 @@
 import { getSinglePost } from "@/sanity/lib/sanity.client";
 import { Metadata } from "next";
-import { PostIntro } from "./(components)";
+import { PostIntro, PostContent, RelatedPosts } from "./(components)";
+import { CallToAction } from "@/components";
 
 interface Props {
   params: { slug: string };
@@ -34,6 +35,18 @@ export default async function SingleBlogPage({ params }: Props) {
           estimatedReadingTime: current.estimatedReadingTime,
         }}
       />
+      <PostContent
+        data={{
+          title: current.title,
+          featuredImage: current.featuredImage,
+          content: current.body,
+          conclusion: current.conclusion,
+          author: current.author,
+          slug:params.slug
+        }}
+      />
+      <RelatedPosts />
+      <CallToAction />
     </>
   );
 }

@@ -108,3 +108,29 @@ h6 {
 .about__team .member:nth-of-type(6) {
   @apply xl:row-start-2 xl:col-start-4;
 }
+
+.share__buttons button {
+  @apply !p-1 !bg-concrete rounded-full;
+}
+.share__buttons svg > circle {
+  @apply !fill-concrete;
+}
+.share__buttons svg > path {
+  @apply !fill-ablack;
+}
+
+.blog__content h2 {
+  @apply text-4xl lg:text-5xl;
+}
+
+.blog__content h3 {
+  @apply text-3xl lg:text-4xl;
+}
+
+.blog__content h4 {
+  @apply text-2xl lg:text-3xl;
+}
+
+.blog__content h5 {
+  @apply text-xl xl:text-2xl;
+}

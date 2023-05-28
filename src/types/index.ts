@@ -137,6 +137,12 @@ export interface NextPrevProps {
   name: string;
 }
 
+export interface AuthorProps {
+  name: string;
+  image: string;
+  expertise: string;
+}
+
 export interface SinglePostPayload {
   current: {
     _id: string;
@@ -148,7 +154,7 @@ export interface SinglePostPayload {
     estimatedReadingTime: number;
     categories: string[];
     tags: string[];
-    author: { name: string; image: string };
+    author: AuthorProps;
     conclusion: string;
   };
   previous?: NextPrevProps;

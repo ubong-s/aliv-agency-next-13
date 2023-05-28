@@ -102,6 +102,7 @@ export const singlePostQuery = groq`
     "author": {
         "name": author->name,
         "image": author->image.asset->url,
+        "expertise": author->expertise,
     },
     conclusion,
     },
