@@ -40,7 +40,7 @@ export const homePageQuery = groq`
       "slug": slug.current,
       services,
     },
-    "blog": *[_type == "post"]  |  order(publishedAt desc) [0...4] {
+    "posts": *[_type == "post"]  |  order(publishedAt desc) [0...4] {
       _id,
       "featuredImage": featuredImage.asset->url,
       title,

@@ -143,7 +143,7 @@ export interface HomePagePayload {
       highlight: string;
     }[];
   };
-  post: Omit<PostPayload, "excerpt" | "slug" | "categories">[];
+  posts: Omit<PostPayload, "excerpt" | "categories">[];
   projects: ProjectsPayload[];
   team: MemberProps[];
   services: {

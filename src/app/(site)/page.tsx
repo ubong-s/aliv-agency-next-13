@@ -8,7 +8,7 @@ export default async function Home() {
 
   if (!homePageData) return null;
 
-  const { home, team, post, projects, services } = homePageData;
+  const { home, team, posts, projects, services } = homePageData;
   return (
     <>
       <Hero
@@ -23,7 +23,7 @@ export default async function Home() {
       <OurValues values={home.ourValues} />
       <Team team={team} />
       <CallToAction />
-      <Blog />
+      <Blog posts={posts} />
     </>
   );
 }
