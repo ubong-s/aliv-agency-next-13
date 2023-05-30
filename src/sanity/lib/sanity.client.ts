@@ -4,6 +4,7 @@ import {
   homePageQuery,
   jobsQuery,
   postsQuery,
+  productsQuery,
   projectsQuery,
   servicesQuery,
   singlePostQuery,
@@ -19,6 +20,7 @@ import type {
   SinglePostPayload,
   PostPayload,
   HomePagePayload,
+  ProductPayload,
 } from "@/types";
 
 /**
@@ -70,4 +72,8 @@ export async function getAboutPage(): Promise<AboutPagePayload | undefined> {
 
 export async function getHomePage(): Promise<HomePagePayload | undefined> {
   return await sanityClient().fetch(homePageQuery);
+}
+
+export async function getProducts(): Promise<ProductPayload[] | undefined> {
+  return await sanityClient().fetch(productsQuery);
 }

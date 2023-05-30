@@ -119,6 +119,14 @@ export interface PostPayload {
   categories: string[];
 }
 
+export interface ProductPayload {
+  _id: string;
+  name: string;
+  image: string;
+  slug: string;
+  price: number;
+}
+
 export interface NextPrevProps {
   featuredImage: string;
   slug: string;

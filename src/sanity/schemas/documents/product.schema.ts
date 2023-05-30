@@ -39,7 +39,8 @@ export const product = defineType({
     defineField({
       name: "description",
       title: "Description",
-      type: "string",
+      type: "text",
+      validation: (rule) => rule.required(),
     }),
     defineField({
       name: "content",
@@ -50,11 +51,7 @@ export const product = defineType({
           type: "block",
         },
       ],
-    }),
-    defineField({
-      name: "inStock",
-      title: "In Stock",
-      type: "number",
+      validation: (rule) => rule.required(),
     }),
   ],
 });

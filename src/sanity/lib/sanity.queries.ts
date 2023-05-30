@@ -154,3 +154,13 @@ export const singlePostQuery = groq`
     }
   }
 `;
+
+export const productsQuery = groq`
+  *[_type == "product"]   {
+    _id,
+    name, 
+    "slug": slug.current,
+    "image": image.asset->url,
+    price
+  }
+`;

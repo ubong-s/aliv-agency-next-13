@@ -1,8 +1,18 @@
+import { ProductsList, ShopHero } from "./(components)";
 import { CallToAction } from "@/components";
+import { getProducts } from "../../../sanity/lib/sanity.client";
 
-export default function ShopPage() {
+export const metadata = {
+  title: "Products - Aliv Agency",
+};
+
+export default async function Shop() {
+  const products = (await getProducts()) || [];
+
   return (
     <>
+      <ShopHero />
+      <ProductsList products={products} />
       <CallToAction />
     </>
   );
