@@ -164,3 +164,21 @@ export const productsQuery = groq`
     price
   }
 `;
+
+export const singleProductQuery = groq`
+  {
+    "product" :*[_type == "product" && slug.current == $slug][0] {
+      name,
+      description,
+      "image":image.asset->url,
+      content,
+      "slug":slug.current,
+      price,
+    },
+    "faq": *[_type == 'faq'] {
+      _id, 
+      question,
+      answer
+    }
+  }
+`;

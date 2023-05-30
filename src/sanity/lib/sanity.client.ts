@@ -8,6 +8,7 @@ import {
   projectsQuery,
   servicesQuery,
   singlePostQuery,
+  singleProductQuery,
   singleProjectQuery,
 } from "./sanity.queries";
 import { createClient } from "next-sanity";
@@ -21,6 +22,7 @@ import type {
   PostPayload,
   HomePagePayload,
   ProductPayload,
+  SingleProductPayload,
 } from "@/types";
 
 /**
@@ -76,4 +78,10 @@ export async function getHomePage(): Promise<HomePagePayload | undefined> {
 
 export async function getProducts(): Promise<ProductPayload[] | undefined> {
   return await sanityClient().fetch(productsQuery);
+}
+
+export async function getSingleProduct(
+  slug: string
+): Promise<SingleProductPayload | undefined> {
+  return await sanityClient().fetch(singleProductQuery, { slug });
 }

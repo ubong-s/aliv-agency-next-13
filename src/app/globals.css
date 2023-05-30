@@ -134,3 +134,9 @@ h6 {
 .blog__content h5 {
   @apply text-xl xl:text-2xl;
 }
+
+.product__content ul {
+  list-style: circle;
+
+  @apply ml-2 flex flex-col gap-4;
+}

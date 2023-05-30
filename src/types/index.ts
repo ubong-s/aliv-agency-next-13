@@ -6,27 +6,6 @@ export type LinkProps = {
   text: string;
 };
 
-export type ServiceProps = {
-  id: number;
-  title: string;
-  description: string;
-  link: string;
-};
-
-export type BlogPostProps = {
-  id: number;
-  title: string;
-  slug: string;
-};
-
-export type ProjectProps = {
-  id: number;
-  slug: string;
-  title: string;
-  image: string;
-  category: string;
-};
-
 export interface StatProps {
   _type: string;
   _key: string;
@@ -125,6 +104,26 @@ export interface ProductPayload {
   image: string;
   slug: string;
   price: number;
+}
+
+export interface FAQProps {
+  question: string;
+  answer: string;
+}
+
+export interface ProductProps {
+  _id: string;
+  name: string;
+  description: string;
+  image: string;
+  content: PortableTextBlock[];
+  slug: string;
+  price: number;
+}
+
+export interface SingleProductPayload {
+  product: ProductProps;
+  faq: FAQProps[];
 }
 
 export interface NextPrevProps {
