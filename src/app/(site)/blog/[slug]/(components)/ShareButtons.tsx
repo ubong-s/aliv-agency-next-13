@@ -21,7 +21,7 @@ interface ShareButtonsProps {
 
 export const ShareButtons = ({ url, title, media }: ShareButtonsProps) => {
   return (
-    <div className="share__buttons flex items-center gap-4 mb-8 lg:flex-col ">
+    <div className="share__buttons flex items-center gap-4  lg:flex-col">
       <FacebookShareButton url={url} title={title}>
         <FacebookIcon size={32} round />
       </FacebookShareButton>

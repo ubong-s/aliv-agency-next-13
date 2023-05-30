@@ -1,11 +1,11 @@
-import { BookIcon } from "@sanity/icons";
+import { BulbOutlineIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
 
 export const about = defineType({
   name: "about",
   title: "About",
   type: "document",
-  icon: BookIcon,
+  icon: BulbOutlineIcon,
   fields: [
     defineField({
       name: "aboutImage",

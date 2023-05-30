@@ -1,11 +1,9 @@
-import { DoubleChevronRightIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
 
 export const job = defineType({
   name: "job",
   title: "Jobs",
   type: "document",
-  icon: DoubleChevronRightIcon,
   fields: [
     defineField({
       name: "position",

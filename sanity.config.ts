@@ -12,6 +12,8 @@ import {
   author,
   category,
   post,
+  product,
+  faq,
 } from "@/sanity/schemas";
 import { pageStructure, singletonPlugin } from "@/sanity/plugins/settings";
 import { productionUrl } from "@/sanity/plugins/productionUrl";
@@ -40,12 +42,14 @@ const config = defineConfig({
       home,
       about,
       // Documents
+      product,
+      post,
+      project,
       job,
       service,
-      project,
+      faq,
       teamMember,
       category,
-      post,
       author,
     ],
   },

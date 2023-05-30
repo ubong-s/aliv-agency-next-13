@@ -18,9 +18,17 @@ export const Blog = ({
 
       <ul className="grid grid-cols-2 gap-8 lg:grid-cols-4">
         {posts.map(({ _id, title, slug, featuredImage }) => (
-          <li key={_id} className="grid gap-4 items-start justify-items-start">
-            <Image src={featuredImage} alt={title} width={376} height={376} />
-            <h4>{title}</h4>
+          <li key={_id}>
+            <div className="lg:h-250px 2xl:h-300px mb-4">
+              <Image
+                src={featuredImage}
+                alt={title}
+                width={376}
+                height={376}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <h4 className="mb-4">{title}</h4>
             <Link
               href={`/blog/${slug}`}
               className="text-sm pb-1 border-b border-b-ablack hover:opacity-50 transition-opacity"

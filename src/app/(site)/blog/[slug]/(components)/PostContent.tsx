@@ -33,14 +33,16 @@ export const PostContent = ({
         </div>
 
         <div
-          className="py-8 lg:flex lg:gap-28 lg:mx-auto lg:py-16 xl:gap-36 max-w-4xl"
+          className="py-8 lg:flex lg:items-start lg:gap-28 lg:mx-auto lg:py-16 xl:gap-36 max-w-4xl relative"
           id="content"
         >
-          <ShareButtons
-            url={`${SITE_URL}/blog/${slug}`}
-            title={title}
-            media={featuredImage}
-          />
+          <div className="mb-8 lg:sticky lg:top-8 lg:mb-0">
+            <ShareButtons
+              url={`${SITE_URL}/blog/${slug}`}
+              title={title}
+              media={featuredImage}
+            />
+          </div>
 
           <div className="grid gap-6">
             <div className="blog__content grid gap-8 mb-8">
