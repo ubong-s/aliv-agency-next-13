@@ -1,6 +1,7 @@
 import { Header, Footer } from "./(components)";
 import { Manrope } from "next/font/google";
 import "../globals.css";
+import { Providers } from "@/redux/provider";
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
 
@@ -18,9 +19,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${manrope.variable} font-sans`}>
         <div className="bg-white min-h-screen">
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
+          <Providers>
+            <Header />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+          </Providers>
         </div>
       </body>
     </html>

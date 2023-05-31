@@ -1,15 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../store";
+import { CartItemProps, ProductPayload } from "@/types";
 
 // Define a type for the slice state
-interface CounterState {
-  value: number;
+interface CartStateProps {
+  items: CartItemProps[];
+  total: number;
 }
 
 // Define the initial state using that type
-const initialState: CounterState = {
-  value: 0,
+const initialState: CartStateProps = {
+  items: [],
+  total: 0,
 };
 
 export const cartSlice = createSlice({
@@ -17,22 +19,25 @@ export const cartSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    // Use the PayloadAction type to declare the contents of `action.payload`
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
+    addItem: (state, action: PayloadAction<CartItemProps>) => {
+      const itemAlreadyInCart = state.items.find(
+        (item) => item._id === action.payload._id
+      );
+      if (itemAlreadyInCart) {
+        const tempItems = state.items.map((item) =>
+          item._id === action.payload._id
+            ? { ...item, amount: item.amount + action.payload.amount }
+            : item
+        );
+
+        state.items = tempItems;
+      } else {
+        state.items = [...state.items, action.payload];
+      }
     },
   },
 });
 
-export const { increment, decrement, incrementByAmount } = cartSlice.actions;
-
-// Other code such as selectors can use the imported `RootState` type
-export const selectCount = (state: RootState) => state.cart.value;
+export const { addItem } = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -1,16 +1,23 @@
 "use client";
 
-import { ProductProps } from "@/types";
+import { useAppDispatch } from "@/redux/hooks";
+import { addItem } from "@/redux/slices/cartSlice";
+import { CartItemProps, ProductProps } from "@/types";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 import { useState } from "react";
 
 export const ProductDetails = ({
-  details: { name, image, description, price, content },
+  details: { _id, name, image, description, price, content },
 }: {
   details: ProductProps;
 }) => {
+  const dispatch = useAppDispatch();
   const [amount, setAmount] = useState<number | string>(1);
+
+  const addToCart = (product: CartItemProps) => {
+    dispatch(addItem(product));
+  };
 
   return (
     <section className="py-12 lg:pt-24">
@@ -34,6 +41,14 @@ export const ProductDetails = ({
           <form
             onSubmit={(e) => {
               e.preventDefault();
+              const product = {
+                _id,
+                name,
+                price,
+                image,
+                amount: Number(amount),
+              };
+              addToCart(product);
             }}
             className="flex items-center gap-4 my-12 lg:my-20"
           >
@@ -45,7 +60,10 @@ export const ProductDetails = ({
               min={1}
               max={10}
             />
-            <button className="inline-block  border border-ablack rounded-full  transition-all px-4 py-3 lg:px-6 lg:py-4 bg-transparent hover:bg-ablack hover:text-white capitalize">
+            <button
+              type="submit"
+              className="inline-block  border border-ablack rounded-full  transition-all px-4 py-3 lg:px-6 lg:py-4 bg-transparent hover:bg-ablack hover:text-white capitalize"
+            >
               Add to cart
             </button>
           </form>

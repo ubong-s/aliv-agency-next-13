@@ -105,6 +105,9 @@ export interface ProductPayload {
   slug: string;
   price: number;
 }
+export interface CartItemProps extends Omit<ProductPayload, "slug"> {
+  amount: number;
+}
 
 export interface FAQProps {
   _id: string;
