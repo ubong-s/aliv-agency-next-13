@@ -25,7 +25,7 @@ export const AboutHero = ({ data }: AboutHeroProps) => {
         </div>
         <div className="col-span-1 lg:py-8">
           <h1 className="uppercase">About</h1>
-          <h2 className="text-52px my-6 lg:text-7xl lg:!leading-105px 2xl:text-8xl ">
+          <h2 className="text-[52px] my-6 lg:text-7xl lg:!leading-[105px] 2xl:text-8xl ">
             {heroHighlight}
           </h2>
           <p className="mb-12 text-lg lg:text-2xl lg:mb-20 xl:mb-32">

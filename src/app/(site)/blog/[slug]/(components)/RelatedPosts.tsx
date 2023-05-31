@@ -17,7 +17,7 @@ export const RelatedPosts = ({ posts }: { posts: RelatedPostsProps[] }) => {
       <ul className="grid grid-cols-2 gap-8 lg:grid-cols-4">
         {posts.map(({ _id, title, slug, featuredImage }) => (
           <li key={_id} className="grid gap-4 items-start justify-items-start">
-            <div className="lg:h-250px 2xl:h-300px">
+            <div className="lg:h-[250px] 2xl:h-[300px]">
               <Image
                 src={featuredImage}
                 alt={title}

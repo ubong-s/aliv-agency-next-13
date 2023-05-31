@@ -10,31 +10,20 @@ html {
 }
 
 body {
-  @apply font-manrope font-light tracking-wider relative min-h-screen  m-auto p-4 lg:p-12 overflow-x-hidden;
-
-  background: white;
-  z-index: 2;
-  max-width: 1920px;
+  @apply font-manrope font-light tracking-wider relative min-h-screen  m-auto p-4 lg:p-12 overflow-x-hidden z-[2] bg-white max-w-[1920px];
 }
 
 body::before {
-  @apply absolute content-[''] top-0 left-0 w-full h-full opacity-30;
-
-  background: url("../../public/assets/noise.png");
-  z-index: -2;
+  @apply absolute content-[''] top-0 left-0 w-full h-full opacity-30 -z-[2] bg-[url("../../public/assets/noise.png")];
 }
 
 body::after {
-  @apply absolute content-[''] top-0 left-0 w-full h-full opacity-90 text-ablack;
-
-  background: url("../../public/assets/background.jpeg");
-  background-size: cover;
-  z-index: -1;
+  @apply absolute content-[''] top-0 left-0 w-full h-full opacity-90 text-ablack -z-[1] bg-[url("../../public/assets/background.jpeg")] bg-cover;
 }
 
 p,
 a {
-  @apply font-manrope  text-sm lg:text-base;
+  @apply font-manrope  text-sm lg:text-base !leading-[28px];
 }
 
 h1,
@@ -47,15 +36,11 @@ h6 {
 }
 
 .main__container {
-  width: 90%;
-  margin: auto;
-  max-width: 1600px;
+  @apply w-[90%] m-auto max-w-[1600px];
 }
 
 .secondary__container {
-  width: 90%;
-  margin: auto;
-  max-width: 1400px;
+  @apply w-[90%] m-auto max-w-[1440px];
 }
 
 /* Home Page Value Section */

@@ -43,7 +43,7 @@ export const OtherPosts = ({
           <li key={_id} className="grid gap-6 items-start justify-items-start">
             <Link
               href={`/blog/${slug}`}
-              className="overflow-hidden md:h-300px lg:h-400px"
+              className="overflow-hidden md:h-[300px] lg:h-[400px]"
             >
               <Image
                 src={featuredImage}

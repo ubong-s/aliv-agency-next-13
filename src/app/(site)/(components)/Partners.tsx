@@ -22,8 +22,8 @@ export const Partners = () => {
   return (
     <section className="py-16 lg:py-28">
       <div className="main__container xl:px-24 overflow-hidden">
-        <div className="flex items-center w-400% lg:w-full">
-          <ul className="flex gap-12 items-center animate-slide w-200% px-6 md:gap-40 md:px-20 lg:w-full lg:animate-none lg:justify-between lg:gap-0 lg:px-0">
+        <div className="flex items-center w-[400%] lg:w-full">
+          <ul className="flex gap-12 items-center animate-slide w-[200%] px-6 md:gap-40 md:px-20 lg:w-full lg:animate-none lg:justify-between lg:gap-0 lg:px-0">
             {partnerList.map(({ id, client, logo }) => (
               <li key={id}>
                 <Image
@@ -37,7 +37,7 @@ export const Partners = () => {
               </li>
             ))}
           </ul>
-          <ul className="flex gap-12 items-center animate-slide w-200% px-6 md:gap-40 md:px-20 lg:w-full lg:animate-none lg:justify-between lg:gap-0 lg:px-0 lg:hidden">
+          <ul className="flex gap-12 items-center animate-slide w-[200%] px-6 md:gap-40 md:px-20 lg:w-full lg:animate-none lg:justify-between lg:gap-0 lg:px-0 lg:hidden">
             {partnerList.map(({ id, client, logo }) => (
               <li key={id}>
                 <Image

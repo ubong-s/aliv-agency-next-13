@@ -28,7 +28,7 @@ export default async function SingleProductPage({ params }: Props) {
   return (
     <>
       <ProductDetails details={product} />
-      <FAQ data={faq} />
+      <FAQ />
       <CallToAction />
     </>
   );

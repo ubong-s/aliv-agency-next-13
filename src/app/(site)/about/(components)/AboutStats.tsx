@@ -7,7 +7,7 @@ export const AboutStats = ({ stats }: { stats: StatProps[] }) => {
         {stats.map(({ _key, count, title, text }) => (
           <div
             key={_key}
-            className="stat__box flex flex-col items-start justify-between h-200px p-6 md:h-300px lg:h-350px xl:p-10 bg-concrete"
+            className="stat__box flex flex-col items-start justify-between h-[200px] p-6 md:h-[300px] lg:h-[350px] xl:p-10 bg-concrete"
           >
             <h3 className="flex flex-col justify-start">
               <span className="text-3xl lg:text-6xl mb-2">{count}</span>

@@ -107,6 +107,7 @@ export interface ProductPayload {
 }
 
 export interface FAQProps {
+  _id: string;
   question: string;
   answer: string;
 }

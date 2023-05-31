@@ -10,7 +10,7 @@ export const Project = ({ project }: { project: ProjectsPayload }) => {
     <li className="grid gap-4 items-start justify-items-start">
       <Link
         href={`/projects/${slug}`}
-        className="lg:h-400px xl:h-500px  w-full"
+        className="lg:h-[400px] xl:h-[500px] w-full"
       >
         <Image
           src={image}
