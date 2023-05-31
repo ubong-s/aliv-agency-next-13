@@ -1,6 +1,4 @@
-import { ProjectProps } from "@/types";
-
-export const projectsList: ProjectProps[] = [
+export const projectsList = [
   {
     id: 1,
     slug: "invision-studio",

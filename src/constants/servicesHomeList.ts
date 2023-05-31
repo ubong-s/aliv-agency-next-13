@@ -1,6 +1,4 @@
-import { ServiceProps } from "@/types";
-
-export const servicesHome: ServiceProps[] = [
+export const servicesHome = [
   {
     id: 1,
     title: "brand strategy",

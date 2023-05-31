@@ -1,6 +1,4 @@
-import { BlogPostProps } from "@/types";
-
-export const blogList: BlogPostProps[] = [
+export const blogList = [
   {
     id: 1,
     title: "The Importance of a Strong Brand Positioning",
