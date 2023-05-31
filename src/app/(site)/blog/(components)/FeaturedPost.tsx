@@ -8,7 +8,7 @@ export const FeaturedPost = ({ post }: { post: PostPayload }) => {
   const { featuredImage, title, categories, excerpt, slug } = post;
 
   return (
-    <section className=" pb-8 lg:pt-12">
+    <section className="pt-8 lg:pt-16">
       <div className="secondary__container grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-24">
         <div className="col-span-1 h-full">
           <Image

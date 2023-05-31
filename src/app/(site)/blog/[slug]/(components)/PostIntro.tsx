@@ -20,7 +20,7 @@ export const PostIntro = ({
   const formattedDate = format(new Date(date), "dd MMM yyy");
 
   return (
-    <section className="py-16 lg:py-20">
+    <section className="py-16 lg:py-24">
       <div className="secondary__container 2xl:px-16">
         <div className="grid grid-cols-2 gap-8 mb-8 lg:grid-cols-3 lg:mb-16">
           <PostDetailColumn text={formattedDate} title="Date" />

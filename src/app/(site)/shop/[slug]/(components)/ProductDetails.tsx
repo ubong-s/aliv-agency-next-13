@@ -13,7 +13,7 @@ export const ProductDetails = ({
   const [amount, setAmount] = useState<number | string>(1);
 
   return (
-    <section className=" pb-8 lg:pt-12">
+    <section className="py-12 lg:pt-24">
       <div className="main__container grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-16 relative ">
         <div className="col-span-1 lg:sticky lg:top-16">
           <Image

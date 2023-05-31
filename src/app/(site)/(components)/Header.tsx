@@ -12,9 +12,9 @@ export const Header = () => {
   const closeMenu = (): void => setMenuOpen(false);
 
   return (
-    <header>
+    <header className="border-b border-b-concrete">
       <div className="main__container">
-        <nav className="flex h-24 items-center  gap-6 lg:h-36 ">
+        <nav className="flex h-24 items-center  gap-6 lg:h-28">
           <Link href="/" className="flex gap-1" onClick={closeMenu}>
             <Logo />
             <span className="hidden lg:inline-block">aliv</span>
@@ -47,7 +47,7 @@ export const Header = () => {
 
           <Link
             href="/contact"
-            className="text-xs inline-block px-4 py-2 border border-ablack rounded-full text-center hover:bg-ablack hover:text-white transition-colors lg:px-6 lg:py-4 lg:flex-grow-0 lg:text-base"
+            className="text-xs inline-block px-4 py-2 border border-ablack rounded-full text-center hover:bg-ablack hover:text-white transition-colors lg:px-6 lg:py-3 lg:flex-grow-0 lg:text-base"
             onClick={closeMenu}
           >
             {"Let's talk"}
