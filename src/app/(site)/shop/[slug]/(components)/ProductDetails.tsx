@@ -1,11 +1,11 @@
 "use client";
 
-import { useAppDispatch } from "@/redux/hooks";
-import { addItem } from "@/redux/slices/cartSlice";
+import { useState } from "react";
+import Image from "next/image";
 import { CartItemProps, ProductProps } from "@/types";
 import { PortableText } from "@portabletext/react";
-import Image from "next/image";
-import { useState } from "react";
+import { useAppDispatch } from "@/redux/hooks";
+import { addItemToCart } from "@/redux/slices/cartSlice";
 
 export const ProductDetails = ({
   details: { _id, name, image, description, price, content },
@@ -16,7 +16,7 @@ export const ProductDetails = ({
   const [amount, setAmount] = useState<number | string>(1);
 
   const addToCart = (product: CartItemProps) => {
-    dispatch(addItem(product));
+    dispatch(addItemToCart(product));
   };
 
   return (
@@ -40,6 +40,8 @@ export const ProductDetails = ({
 
           <form
             onSubmit={(e) => {
+              console.log(_id);
+
               e.preventDefault();
               const product = {
                 _id,

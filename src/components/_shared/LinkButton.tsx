@@ -23,7 +23,7 @@ export const LinkButton = ({
   return (
     <Link
       href={link}
-      className={`inline-block  border border-ablack rounded-full  transition-all ${
+      className={`inline-block border border-ablack rounded-full  transition-all ${
         !small ? "px-4 py-3 lg:px-6 lg:py-4" : "py-2 px-3"
       } ${
         variant === "primary"
@@ -32,7 +32,7 @@ export const LinkButton = ({
       }`}
       onClick={onClick}
     >
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-2 items-center justify-center">
         {linkText}
         {icon}
       </div>

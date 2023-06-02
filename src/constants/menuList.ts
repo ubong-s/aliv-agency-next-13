@@ -3,21 +3,26 @@ import { LinkProps } from "@/types";
 export const menuList: LinkProps[] = [
   {
     id: 1,
+    link: "/shop",
+    text: "shop ",
+  },
+  {
+    id: 2,
     link: "/projects",
     text: "work",
   },
   {
-    id: 2,
+    id: 3,
     link: "/services",
     text: "services",
   },
   {
-    id: 3,
+    id: 4,
     link: "/about",
     text: "about",
   },
   {
-    id: 4,
+    id: 5,
     link: "/blog",
     text: "blog",
   },

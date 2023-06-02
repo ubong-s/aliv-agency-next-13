@@ -9,6 +9,33 @@ html {
   scroll-behavior: smooth !important;
 }
 
+body::-webkit-scrollbar {
+  width: 0.75em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 5px;
+  /* outline: 1px solid slategrey; */
+}
+.cart__list::-webkit-scrollbar {
+  width: 0.375em;
+}
+
+.cart__list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.cart__list::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 10px;
+  /* outline: 1px solid slategrey; */
+}
+
 body {
   @apply font-manrope font-light tracking-wider relative min-h-screen  m-auto p-4 lg:p-12 overflow-x-hidden z-[2] bg-white max-w-[1920px];
 }

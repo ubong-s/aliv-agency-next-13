@@ -1,4 +1,4 @@
-import { Header, Footer } from "./(components)";
+import { Header, Footer, Cart } from "./(components)";
 import { Manrope } from "next/font/google";
 import "../globals.css";
 import { Providers } from "@/redux/provider";
@@ -18,9 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} font-sans`}>
-        <div className="bg-white min-h-screen">
+        <div className="bg-white min-h-screen relative">
           <Providers>
             <Header />
+            <Cart />
             <main className="min-h-screen">{children}</main>
             <Footer />
           </Providers>

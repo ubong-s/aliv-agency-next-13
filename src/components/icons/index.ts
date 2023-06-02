@@ -4,3 +4,4 @@ export { Bars } from "./Bars";
 export { Close } from "./Close";
 export { Logo } from "./Logo";
 export { ArrowDown } from "./ArrowDown";
+export { CartIcon } from "./CartIcon";

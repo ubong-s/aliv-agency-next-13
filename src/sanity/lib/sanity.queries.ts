@@ -168,6 +168,7 @@ export const productsQuery = groq`
 export const singleProductQuery = groq`
   {
     "product" :*[_type == "product" && slug.current == $slug][0] {
+      _id,
       name,
       description,
       "image":image.asset->url,
