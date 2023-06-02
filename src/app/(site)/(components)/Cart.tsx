@@ -6,7 +6,11 @@ import { closeCart } from "@/redux/slices/cartSlice";
 import { CartItem } from "./CartItem";
 
 export const Cart = () => {
-  const { items: products, cartOpen } = useAppSelector((state) => state.cart);
+  const {
+    items: products,
+    cartOpen,
+    totalAmount,
+  } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
 
   return (
@@ -61,7 +65,7 @@ export const Cart = () => {
             </div>
             <div className="flex items-center justify-between">
               <h5>Subtotal</h5>
-              <button>$156.00 USD</button>
+              <button>${totalAmount}.00 USD</button>
             </div>
             <LinkButton
               link="/checkout"

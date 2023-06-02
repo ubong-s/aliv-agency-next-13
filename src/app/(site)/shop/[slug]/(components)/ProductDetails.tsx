@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { CartItemProps, ProductProps } from "@/types";
 import { PortableText } from "@portabletext/react";
-import { useAppDispatch } from "@/redux/hooks";
-import { addItemToCart } from "@/redux/slices/cartSlice";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { addItemToCart, calculateTotals } from "@/redux/slices/cartSlice";
 import toast from "react-hot-toast";
 
 export const ProductDetails = ({
@@ -14,7 +14,12 @@ export const ProductDetails = ({
   details: ProductProps;
 }) => {
   const dispatch = useAppDispatch();
+  const { items } = useAppSelector((state) => state.cart);
   const [amount, setAmount] = useState<number | string>(1);
+
+  useEffect(() => {
+    dispatch(calculateTotals());
+  }, [items, dispatch]);
 
   const addToCart = (product: CartItemProps) => {
     dispatch(addItemToCart(product));
