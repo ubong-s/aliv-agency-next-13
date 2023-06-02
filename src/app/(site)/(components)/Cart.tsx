@@ -1,9 +1,9 @@
 "use client";
 
-import { LinkButton } from "@/components";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { closeCart } from "@/redux/slices/cartSlice";
-import { CartItem } from "./CartItem";
+import { CartWithItems } from "./CartWithItems";
+import { CartEmpty } from "./CartEmpty";
 
 export const Cart = () => {
   const {
@@ -25,55 +25,15 @@ export const Cart = () => {
       ></div>
       <div className="absolute top-4 right-4 bottom-4 left-4 bg-white p-8 lg:right-12 lg:top-12 lg:bottom-12 lg:left-auto lg:w-[500px]">
         {products.length < 1 && (
-          <div className="h-full w-full relative flex items-center justify-center">
-            <button
-              className="absolute top-0 right-0 pb-[2px] border-b border-b-black"
-              onClick={() => dispatch(closeCart())}
-            >
-              close
-            </button>
-            <div className="grid gap-4 justify-items-center">
-              <h3 className="uppercase text-xl lg:text-2xl">
-                Your Cart is empty
-              </h3>
-              <LinkButton
-                link="/shop"
-                linkText="Go Shopping"
-                variant="primary"
-                onClick={() => dispatch(closeCart())}
-              />
-            </div>
-          </div>
+          <CartEmpty closeCart={() => dispatch(closeCart())} />
         )}
 
         {products.length > 0 && (
-          <div className="flex flex-col gap-8 h-full">
-            <div className="flex items-center justify-between">
-              <h3>Cart</h3>
-              <button
-                className="pb-[2px] border-b border-b-black"
-                onClick={() => dispatch(closeCart())}
-              >
-                close
-              </button>
-            </div>
-
-            <div className="cart__list flex-grow pr-4 overflow-y-auto">
-              {products.map((product) => (
-                <CartItem key={product._id} product={product} />
-              ))}
-            </div>
-            <div className="flex items-center justify-between">
-              <h5>Subtotal</h5>
-              <button>${totalAmount}.00 USD</button>
-            </div>
-            <LinkButton
-              link="/checkout"
-              linkText="Proceed to checkout"
-              variant="primary"
-              onClick={() => dispatch(closeCart())}
-            />
-          </div>
+          <CartWithItems
+            products={products}
+            closeCart={() => dispatch(closeCart())}
+            totalAmount={totalAmount}
+          />
         )}
       </div>
     </div>
