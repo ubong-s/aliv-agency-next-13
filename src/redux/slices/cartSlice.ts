@@ -33,8 +33,6 @@ export const cartSlice = createSlice({
       state.cartOpen = !state.cartOpen;
     },
     addItemToCart: (state, action: PayloadAction<CartItemProps>) => {
-      console.log(">>>>>>>> Payload", action.payload);
-
       const itemAlreadyInCart = state.items.find(
         (item) => item._id === action.payload._id
       );
@@ -51,25 +49,22 @@ export const cartSlice = createSlice({
       }
     },
     removeItemFromCart: (state, action: PayloadAction<{ id: string }>) => {
-      const itemInCart = state.items.find(
-        (item) => item._id === action.payload.id
+      let tempItems = [...state.items];
+      tempItems = tempItems.filter((item) => item._id !== action.payload.id);
+
+      state.items = tempItems;
+    },
+    toggleCartItemAmount: (
+      state,
+      action: PayloadAction<{ id: string; amount: number }>
+    ) => {
+      const tempItems = state.items.map((item) =>
+        item._id === action.payload.id
+          ? { ...item, amount: action.payload.amount }
+          : item
       );
-      if (itemInCart && itemInCart.amount > 1) {
-        const tempItems = state.items.map((item) =>
-          item._id === action.payload.id
-            ? { ...item, amount: item.amount - 1 }
-            : item
-        );
 
-        state.items = tempItems;
-      } else if (itemInCart && itemInCart.amount === 1) {
-        let tempItems = [...state.items];
-        tempItems = tempItems.filter((item) => item._id !== action.payload.id);
-
-        state.items = tempItems;
-      } else {
-        console.log("Product is not in basket");
-      }
+      state.items = tempItems;
     },
     calculateTotals: (state) => {
       const { totalItems, totalAmount } = state.items.reduce(
@@ -94,6 +89,7 @@ export const {
   openCart,
   closeCart,
   toggleCart,
+  toggleCartItemAmount,
   addItemToCart,
   removeItemFromCart,
   calculateTotals,

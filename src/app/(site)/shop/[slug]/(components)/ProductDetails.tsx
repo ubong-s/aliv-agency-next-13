@@ -6,6 +6,7 @@ import { CartItemProps, ProductProps } from "@/types";
 import { PortableText } from "@portabletext/react";
 import { useAppDispatch } from "@/redux/hooks";
 import { addItemToCart } from "@/redux/slices/cartSlice";
+import toast from "react-hot-toast";
 
 export const ProductDetails = ({
   details: { _id, name, image, description, price, content },
@@ -40,8 +41,6 @@ export const ProductDetails = ({
 
           <form
             onSubmit={(e) => {
-              console.log(_id);
-
               e.preventDefault();
               const product = {
                 _id,
@@ -51,6 +50,7 @@ export const ProductDetails = ({
                 amount: Number(amount),
               };
               addToCart(product);
+              toast(`${name} added to cart`);
             }}
             className="flex items-center gap-4 my-12 lg:my-20"
           >

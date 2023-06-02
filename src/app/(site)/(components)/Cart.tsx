@@ -3,14 +3,11 @@
 import { LinkButton } from "@/components";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { closeCart } from "@/redux/slices/cartSlice";
-import Image from "next/image";
 import { CartItem } from "./CartItem";
 
 export const Cart = () => {
   const { items: products, cartOpen } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
-
-  console.log(products);
 
   return (
     <div
