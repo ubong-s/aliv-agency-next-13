@@ -14,7 +14,7 @@ export const TopBar = () => {
             {session.user.name}
           </Link>
         ) : (
-          <Link href={"/auth.login"} className="text-xs">
+          <Link href={"/auth/login"} className="text-xs">
             Login
           </Link>
         )}

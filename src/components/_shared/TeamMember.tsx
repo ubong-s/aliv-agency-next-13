@@ -9,7 +9,7 @@ export const TeamMember = ({ member }: { member: MemberProps }) => {
   const { name, expertise, image, Socials } = member;
   return (
     <li className="relative member">
-      <div className=" group relative overflow-y-hidden">
+      <div className="group relative overflow-y-hidden">
         <div className="h-full w-full bg-red-200">
           <Image
             src={image || placeholderImage}
