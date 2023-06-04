@@ -14,15 +14,11 @@ export const ProductDetails = ({
   details: ProductProps;
 }) => {
   const dispatch = useAppDispatch();
-  const { items } = useAppSelector((state) => state.cart);
   const [amount, setAmount] = useState<number | string>(1);
-
-  useEffect(() => {
-    dispatch(calculateTotals());
-  }, [items, dispatch]);
 
   const addToCart = (product: CartItemProps) => {
     dispatch(addItemToCart(product));
+    toast.success(`${product.name} added to cart`);
   };
 
   return (
@@ -55,7 +51,6 @@ export const ProductDetails = ({
                 amount: Number(amount),
               };
               addToCart(product);
-              toast(`${name} added to cart`);
             }}
             className="flex items-center gap-4 my-12 lg:my-20"
           >

@@ -15,6 +15,7 @@ import {
   product,
   faq,
 } from "@/sanity/schemas";
+import { user, account, verificationToken } from "next-auth-sanity/schemas";
 import { pageStructure, singletonPlugin } from "@/sanity/plugins/settings";
 import { productionUrl } from "@/sanity/plugins/productionUrl";
 import { previewDocumentNode } from "@/sanity/plugins/previewPane";
@@ -51,6 +52,9 @@ const config = defineConfig({
       teamMember,
       category,
       author,
+      user,
+      account,
+      verificationToken,
     ],
   },
   plugins: [

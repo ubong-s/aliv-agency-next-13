@@ -1,9 +1,10 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { closeCart } from "@/redux/slices/cartSlice";
+import { calculateTotals, closeCart } from "@/redux/slices/cartSlice";
 import { CartWithItems } from "./CartWithItems";
 import { CartEmpty } from "./CartEmpty";
+import { useEffect } from "react";
 
 export const Cart = () => {
   const {
@@ -12,6 +13,10 @@ export const Cart = () => {
     totalAmount,
   } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(calculateTotals());
+  }, [products, dispatch]);
 
   return (
     <div

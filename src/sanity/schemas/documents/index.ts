@@ -7,3 +7,4 @@ export { teamMember } from "./teamMember.schema";
 export { job } from "./job.schema";
 export { project } from "./project.schema";
 export { product } from "./product.schema";
+export { user } from "./user.schema";

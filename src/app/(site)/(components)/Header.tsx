@@ -13,7 +13,7 @@ export const Header = () => {
   const toggleMenu = (): void => setMenuOpen(!menuOpen);
   const closeMenu = (): void => setMenuOpen(false);
   const dispatch = useAppDispatch();
-  const { totalItems } = useAppSelector((state) => state.cart);
+  const { items } = useAppSelector((state) => state.cart);
 
   return (
     <header className="border-b border-b-concrete">
@@ -79,7 +79,7 @@ export const Header = () => {
             title="Cart Button"
           >
             <span className="absolute bg-spanish-white p-3 rounded-full h-6 w-6 flex items-center justify-center -top-3 -right-3">
-              {totalItems}
+              {items.length}
             </span>
             <span>
               <CartIcon />
