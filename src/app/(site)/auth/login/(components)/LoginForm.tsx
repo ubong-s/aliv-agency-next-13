@@ -7,56 +7,40 @@ import { signIn } from "next-auth/react";
 import { Formik, Form } from "formik";
 import { InputField } from "@/components";
 import Link from "next/link";
-import { createAccountValidation } from "@/validation";
+import { loginValidation } from "@/validation";
 
 interface FormProps {
-  name: string;
   email: string;
   password: string;
 }
 
 const initalValues = {
-  name: "",
   email: "",
   password: "",
-  password2: "",
 };
 
-export const CreateAccountForm = () => {
+export const LoginForm = ({ csrfToken }: { csrfToken: string | undefined }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: "", text: "" });
   const [showForm, setShowForm] = useState(false);
 
-  const handleCreateAccount = async (values: FormProps) => {
-    const { email, password, name } = values;
+  const handleLogin = async (values: FormProps) => {
+    const { email, password } = values;
     try {
       setLoading(true);
-      const user = await signUp({
+      const response = await signIn("sanity-login", {
         email,
         password,
-        name,
+        redirect: false,
       });
-      setLoading(false);
 
-      //@ts-ignore
-      if (user?.error) {
+      if (response?.error) {
         setLoading(false);
-        //@ts-ignore
-        setMessage({ type: "error", text: user?.error });
+        setMessage({ type: "error", text: response.error });
       } else {
-        setMessage({
-          type: "success",
-          text: "account created. Logging in....",
-        });
-        await signIn("sanity-login", {
-          email,
-          password,
-          redirect: false,
-        });
-        setTimeout(() => {
-          router.push("/");
-        }, 2000);
+        router.push("/");
+        setLoading(false);
       }
     } catch (error: any) {
       setLoading(false);
@@ -73,20 +57,19 @@ export const CreateAccountForm = () => {
   if (!showForm) return null;
 
   return (
-    <section className="secondary__container py-8 lg:grid lg:items-center lg:py-0 lg:min-h-screen">
+    <section className="secondary__container py-8 lg:grid lg:items-center  lg:py-0 lg:min-h-screen">
       <div className="lg:w-[600px] m-auto">
         <div className="grid gap-4">
           <div className="grid gap-2 text-center">
-            <h1 className="uppercase">Create Account</h1>
+            <h1 className="uppercase">Login</h1>
             <p>Please provide the details below.</p>
             {message.text && <p>{message.text}</p>}
           </div>
           <Formik
             initialValues={initalValues}
-            validationSchema={createAccountValidation}
+            validationSchema={loginValidation}
             onSubmit={(values) => {
-              handleCreateAccount({
-                name: values.name,
+              handleLogin({
                 email: values.email,
                 password: values.password,
               });
@@ -94,24 +77,12 @@ export const CreateAccountForm = () => {
           >
             {({ values, errors, touched, handleChange, resetForm }) => (
               <>
-                <Form>
-                  <div className="grid gap-1 mb-4">
-                    <InputField
-                      label="name"
-                      type="name"
-                      id="name"
-                      name="name"
-                      placeholder="Your Name"
-                      value={values.name}
-                      onChange={handleChange}
-                      error={errors.name}
-                    />
-                    {errors.name && touched.name ? (
-                      <span className="text-red-400 text-xs">
-                        {errors.name}
-                      </span>
-                    ) : null}
-                  </div>
+                <Form method="post" action="/api/auth/callback/sanity-login">
+                  <input
+                    name="csrfToken"
+                    type="hidden"
+                    defaultValue={csrfToken}
+                  />
                   <div className="grid gap-1 mb-4">
                     <InputField
                       label="email"
@@ -144,38 +115,25 @@ export const CreateAccountForm = () => {
                       <span className="">{errors.password}</span>
                     ) : null}
                   </div>
-                  <div className="grid gap-1 mb-4">
-                    <InputField
-                      label="password2"
-                      type="password"
-                      id="password2"
-                      name="password2"
-                      placeholder="Confirm Password"
-                      value={values.password2}
-                      onChange={handleChange}
-                      error={errors.password2}
-                    />
-                    {errors.password2 && touched.password2 ? (
-                      <span className="text-red-400 text-xs">
-                        {errors.password2}
-                      </span>
-                    ) : null}
-                  </div>
+
                   <button
                     type="submit"
                     className="bg-ablack text-white w-full py-4 px-6 rounded-full disabled:opacity-50 disabled:pointer-events-none"
                     disabled={loading}
                   >
-                    {loading ? "Creating..." : "Create Account"}
+                    {loading ? "Logging in..." : "Login"}
                   </button>
                 </Form>
               </>
             )}
           </Formik>
           <p className="mt-4 text-center">
-            Already have an Account?{" "}
-            <Link href="/auth/login" className="pb-1 border-b border-ablack">
-              Login
+            Don’t have an Account?{" "}
+            <Link
+              href="/auth/create-account"
+              className="pb-1 border-b border-ablack"
+            >
+              Create Account
             </Link>
           </p>
         </div>

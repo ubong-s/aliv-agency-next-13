@@ -28,7 +28,7 @@ export const InputField: FC<InputProps> = ({
 }) => {
   return (
     <Field
-      className={`border w-full py-4 px-6 rounded-full lg:p-6 ${
+      className={`border w-full py-4 px-6 rounded-full ${
         error ? `border-red-400` : "border-ablack"
       }`}
       id={id}

@@ -16,6 +16,10 @@ export const authOptions: NextAuthOptions = {
     }),
     SanityCredentials(sanityWriteClient()),
   ],
+  pages: {
+    signIn: "/auth/login",
+  },
+  secret: process.env.JWT_SECRET,
 };
 
 export default NextAuth(authOptions);
