@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { signUp } from "next-auth-sanity/client";
 import { signIn } from "next-auth/react";
 import { Formik, Form } from "formik";
 import { InputField } from "@/components";

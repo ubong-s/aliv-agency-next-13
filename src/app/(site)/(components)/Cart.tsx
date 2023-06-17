@@ -1,10 +1,23 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { calculateTotals, closeCart } from "@/redux/slices/cartSlice";
+import {
+  calculateTotals,
+  closeCart,
+  setCartItems,
+} from "@/redux/slices/cartSlice";
 import { CartWithItems } from "./CartWithItems";
 import { CartEmpty } from "./CartEmpty";
 import { useEffect } from "react";
+
+const getLocalStorage = () => {
+  if (typeof window !== "undefined") {
+    const cartItemsJson = localStorage.getItem("cart-items");
+    let cartItems = cartItemsJson !== null && JSON.parse(cartItemsJson);
+
+    return cartItems;
+  }
+};
 
 export const Cart = () => {
   const {
@@ -17,6 +30,17 @@ export const Cart = () => {
   useEffect(() => {
     dispatch(calculateTotals());
   }, [products, dispatch]);
+
+  useEffect(() => {
+    if (getLocalStorage().length > 0) {
+      dispatch(setCartItems(getLocalStorage()));
+    }
+    //eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cart-items", JSON.stringify(products));
+  }, [products]);
 
   return (
     <div

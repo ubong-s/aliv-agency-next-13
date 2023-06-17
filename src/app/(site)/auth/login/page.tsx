@@ -10,6 +10,7 @@ export const metadata = {
 
 export default async function LoginPage() {
   const session = await getServerSession(authOptions);
+
   const csrfToken = await getCsrfToken();
 
   if (session) {

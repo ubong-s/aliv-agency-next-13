@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { CartItemProps, ProductPayload } from "@/types";
+import { CartItemProps } from "@/types";
 
 // Define a type for the slice state
 interface CartStateProps {
@@ -82,6 +82,9 @@ export const cartSlice = createSlice({
       state.totalAmount = totalAmount;
       state.totalItems = totalItems;
     },
+    setCartItems: (state, action: PayloadAction<CartItemProps[]>) => {
+      state.items = action.payload;
+    },
   },
 });
 
@@ -93,6 +96,7 @@ export const {
   addItemToCart,
   removeItemFromCart,
   calculateTotals,
+  setCartItems,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

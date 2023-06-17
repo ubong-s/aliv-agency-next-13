@@ -20,6 +20,14 @@ export const authOptions: NextAuthOptions = {
     signIn: "/auth/login",
   },
   secret: process.env.JWT_SECRET,
+  callbacks: {
+    async session({ session, token, user }) {
+      // Send properties to the client, like an access_token and user id from a provider.
+      session.user._id = token.sub as string;
+
+      return session;
+    },
+  },
 };
 
 export default NextAuth(authOptions);

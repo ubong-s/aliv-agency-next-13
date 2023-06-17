@@ -9,8 +9,6 @@ export const metadata = {
 export default async function Shop() {
   const products = (await getProducts()) || [];
 
-  console.log(products);
-
   return (
     <>
       <ShopHero />
