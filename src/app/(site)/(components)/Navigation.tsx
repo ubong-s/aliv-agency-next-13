@@ -18,7 +18,7 @@ export const Navigation = () => {
   return (
     <nav className="border-b border-b-concrete">
       <div className="main__container">
-        <div className="flex h-24 items-center gap-6 lg:h-24">
+        <div className="flex h-24 items-center gap-2 md:gap-6 lg:h-24">
           <Link href="/" className="flex gap-1" onClick={closeMenu}>
             <Logo />
             <span className="hidden lg:inline-block">aliv</span>
@@ -27,7 +27,7 @@ export const Navigation = () => {
           <div className="flex-grow">
             <Link
               href="/jobs"
-              className="text-xs px-4 py-2 bg-spanish-white border border-spanish-white rounded-full text-center hover:bg-ablack hover:text-white transition-colors md:inline-block lg:flex-grow-0 lg:text-base"
+              className="whitespace-nowrap text-xs px-4 py-2 bg-spanish-white border border-spanish-white rounded-full text-center hover:bg-ablack hover:text-white transition-colors md:inline-block lg:flex-grow-0 lg:text-base"
               onClick={closeMenu}
             >{`We're hiring`}</Link>
           </div>
@@ -55,13 +55,15 @@ export const Navigation = () => {
             ))}
           </ul>
 
-          <Link
-            href="/contact"
-            className="text-xs inline-block px-4 py-2 border border-ablack rounded-full text-center hover:bg-ablack hover:text-white transition-colors lg:px-6 lg:py-3 lg:flex-grow-0 lg:text-base"
-            onClick={closeMenu}
-          >
-            {"Let's talk"}
-          </Link>
+          <div className="">
+            <Link
+              href="/contact"
+              className="whitespace-nowrap text-xs px-4 py-2  border border-ablack rounded-full text-center hover:bg-ablack hover:text-white transition-colors lg:px-6 lg:py-3 lg:flex-grow-0 lg:text-base"
+              onClick={closeMenu}
+            >
+              {"Let's talk"}
+            </Link>
+          </div>
 
           <button
             className={`${menuOpen && "z-10"} lg:hidden`}
