@@ -1,3 +1,5 @@
+"use client";
+
 import { LinkButton, LinkIcon, SectionHeading } from "@/components";
 
 export const OurValues = ({

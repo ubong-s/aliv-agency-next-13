@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { menuList } from "@/constants/menuList";
 import { Bars, Logo, Close, CustomLink, CartIcon } from "@/components";
@@ -14,6 +14,14 @@ export const Navigation = () => {
   const closeMenu = (): void => setMenuOpen(false);
   const dispatch = useAppDispatch();
   const { items } = useAppSelector((state) => state.cart);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.classList.add("menuCartOpen");
+    } else {
+      document.body.classList.remove("menuCartOpen");
+    }
+  }, [menuOpen]);
 
   return (
     <nav className="border-b border-b-concrete">
@@ -33,8 +41,8 @@ export const Navigation = () => {
           </div>
 
           <div
-            className={`fixed bg-black top-0 left-0 h-full w-full lg:hidden ${
-              menuOpen ? "opacity-50 z-10 " : "opacity-0 -z-10"
+            className={`fixed backdrop-blur-sm bg-black/30 top-0 left-0 h-full w-full scale-110 lg:hidden ${
+              menuOpen ? "z-10 " : "opacity-0 -z-10"
             }`}
             onClick={closeMenu}
           ></div>

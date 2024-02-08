@@ -22,7 +22,7 @@ export const TeamMember = ({ member }: { member: MemberProps }) => {
         {Socials && (
           <ul className="social absolute right-4 bottom-4 flex gap-2 lg:right-6 lg:bottom-6 lg:opacity-0  lg:translate-y-52 group-hover:lg:opacity-100 group-hover:lg:translate-y-0 transition-all">
             {Socials.map((social) => (
-              <li key={name}>
+              <li key={`${name} ${social.name}`}>
                 <Link
                   href={social.url}
                   className="hover:opacity-50 transition-opacity"

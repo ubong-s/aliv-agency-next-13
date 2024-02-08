@@ -42,6 +42,14 @@ export const Cart = () => {
     localStorage.setItem("cart-items", JSON.stringify(products));
   }, [products]);
 
+  useEffect(() => {
+    if (cartOpen) {
+      document.body.classList.add("menuCartOpen");
+    } else {
+      document.body.classList.remove("menuCartOpen");
+    }
+  }, [cartOpen]);
+
   return (
     <div
       className={`fixed top-0 left-0 w-full h-screen  p-4 lg:p-12 transition-opacity ${
@@ -49,7 +57,7 @@ export const Cart = () => {
       }`}
     >
       <div
-        className="absolute bg-black opacity-50 top-0 left-0 h-full w-full"
+        className="backdrop-blur-sm absolute bg-black/30  top-0 left-0 h-full w-full"
         onClick={() => dispatch(closeCart())}
       ></div>
       <div className="absolute top-4 right-4 bottom-4 left-4 bg-white p-8 lg:right-12 lg:top-12 lg:bottom-12 lg:left-auto lg:w-[500px]">

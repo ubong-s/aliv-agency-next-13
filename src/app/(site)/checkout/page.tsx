@@ -25,7 +25,7 @@ export default function CheckoutPage() {
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
-  }, []);
+  }, [products]);
 
   const appearance = {
     theme: "stripe",

@@ -13,9 +13,9 @@ export const Team = ({ team }: { team: MemberProps[] }) => {
       />
       <ul className="grid grid-cols-2 gap-y-20 gap-x-8 mb-28 xl:gap-8 xl:grid-cols-4">
         <TeamCTA />
-        {team.map((member, index) => (
-          <TeamMember key={member._id} member={member} />
-        ))}
+        {team.map((member, index) => {
+          return <TeamMember key={member._id} member={member} />;
+        })}
       </ul>
 
       <div className="grid gap-12 lg:gap-16">

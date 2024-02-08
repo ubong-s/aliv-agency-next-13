@@ -35,7 +35,7 @@ export const CartWithItems = ({
         <button>${totalAmount}.00 USD</button>
       </div>
       <LinkButton
-        link="#"
+        link="/checkout"
         linkText="Proceed to checkout"
         variant="primary"
         onClick={closeCart}

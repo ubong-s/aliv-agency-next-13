@@ -5,21 +5,21 @@
 * {
   @apply font-manrope font-light;
 }
+
 html {
-  scroll-behavior: smooth !important;
+  position: relative;
 }
 
 body::-webkit-scrollbar {
-  width: 0.75em;
+  width: 0em;
 }
 
 body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
 }
 
 body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
-  border-radius: 5px;
   /* outline: 1px solid slategrey; */
 }
 .cart__list::-webkit-scrollbar {
@@ -27,7 +27,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .cart__list::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.15);
 }
 
 .cart__list::-webkit-scrollbar-thumb {
@@ -37,7 +37,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 body {
-  @apply font-manrope font-light tracking-wider relative min-h-screen  m-auto p-4 lg:p-12 overflow-x-hidden z-[2] bg-white max-w-[1920px];
+  @apply font-manrope font-light tracking-wider m-auto p-4 lg:p-12 overflow-x-hidden z-[2] bg-white max-w-[1920px];
 }
 
 body::before {
@@ -46,6 +46,11 @@ body::before {
 
 body::after {
   @apply absolute content-[''] top-0 left-0 w-full h-full opacity-90 text-ablack -z-[1] bg-[url("../../public/assets/background.jpeg")] bg-cover;
+}
+
+body.menuCartOpen {
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 p,
@@ -151,4 +156,12 @@ h6 {
   list-style: circle;
 
   @apply ml-2 flex flex-col gap-4;
+}
+
+.has-scroll-smooth {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
