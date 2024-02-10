@@ -1,4 +1,9 @@
+"use client";
+
+import { useIsomorphicLayoutEffect } from "@/utils/useIsomorphicLayout";
+import gsap from "gsap";
 import Link from "next/link";
+import { useRef } from "react";
 
 export const Services = ({
   services,
@@ -10,9 +15,39 @@ export const Services = ({
     text: string;
   }[];
 }) => {
+  const container = useRef(null);
+
+  useIsomorphicLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      const cards: HTMLElement[] = gsap.utils.toArray("li");
+
+      cards.forEach((card, index) => {
+        gsap.set(card.children, { opacity: 0, y: "-50px" });
+
+        gsap.from(card, {
+          transformOrigin: "50% 50%",
+          scaleX: 0,
+          opacity: 0,
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+          },
+          onComplete: () => {
+            gsap.to(card.children, {
+              autoAlpha: 1,
+              y: "0",
+              stagger: { amount: 0.5 },
+            });
+          },
+        });
+      });
+    }, container);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="services" className="pb-20">
-      <h2></h2>
+    <section id="services" className="pb-20" ref={container}>
       <div className="main__container">
         <ul className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {services.map(({ _id, name, text, slug }) => (

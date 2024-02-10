@@ -20,7 +20,7 @@ export const Project = ({ project }: { project: ProjectsPayload }) => {
           className="w-full h-full object-cover"
         />
       </Link>
-      <div className="flex items-center justify-between w-full ">
+      <div className="title flex items-center justify-between w-full ">
         <Link href={`/projects/${slug}`}>
           <h4 className="capitalize text-xl md:text-2xl">{name}</h4>
         </Link>
