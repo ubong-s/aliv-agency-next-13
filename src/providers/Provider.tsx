@@ -5,7 +5,6 @@ import { SessionProvider } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { Provider } from "react-redux";
-import { LocomotiveScrollProvider as RLSProvider } from "react-locomotive-scroll";
 import { Manrope } from "next/font/google";
 import { Cart, Header } from "@/app/(site)/(components)";
 import { useIsomorphicLayoutEffect } from "@/utils/useIsomorphicLayout";
