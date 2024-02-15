@@ -61,7 +61,7 @@ export const OurValues = ({
       <div className=" grid gap-6 md:grid-cols-2 mt-8 md:gap-8 lg:grid-cols-3 xl:grid-cols-4">
         <div className="value__box flex flex-col items-start justify-between h-[200px] p-6 md:h-[376px] xl:p-12 bg-alabaster">
           <div>
-            <p className="text-xs uppercase mb-4">Services</p>
+            <p className="uppercase mb-4">Services</p>
             <h3 className="text-2xl">Our Approach to Branding.</h3>
           </div>
 
@@ -78,9 +78,7 @@ export const OurValues = ({
             key={index}
             className="value__box flex flex-col items-start justify-between h-[200px] p-6 md:h-[376px] xl:p-12 "
           >
-            <p className="text-xs uppercase md:w-[70%] xl:w-[80%]">
-              {value.title}
-            </p>
+            <p className="uppercase md:w-[70%] xl:w-[80%]">{value.title}</p>
             <p className="text-2xl md:w-[85%] xl:w-[90%]">{value.highlight}</p>
           </div>
         ))}

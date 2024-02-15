@@ -18,9 +18,9 @@ export const CustomLink = ({
   return (
     <Link
       href={link}
-      className={`relative ${uppercase ? "uppercase" : "capitalize"} text-sm ${
+      className={`relative ${uppercase ? "uppercase" : "capitalize"}  ${
         darkBg ? "text-white after:bg-white" : "text-ablack after:bg-ablack"
-      } lg:capitalize lg:text-ablack lg:text-base after:absolute after:content-[''] after:-bottom-1 after:left-0 after:w-0 after:h-1px  after:invisible lg:after:bg-ablack  hover:after:w-full hover:after:visible hover:after:transition-all`}
+      } lg:capitalize lg:text-ablack  after:absolute after:content-[''] after:-bottom-1 after:left-0 after:w-0 after:h-1px  after:invisible lg:after:bg-ablack  hover:after:w-full hover:after:visible hover:after:transition-all`}
       onClick={onClick}
     >
       {text}

@@ -7,13 +7,11 @@ import { useEffect, useRef } from "react";
 import { Provider } from "react-redux";
 import { Manrope } from "next/font/google";
 import { Cart, Header } from "@/app/(site)/(components)";
-import { useIsomorphicLayoutEffect } from "@/utils/useIsomorphicLayout";
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const containerRef = useRef(null);
 
   useEffect(() => {
     (async () => {

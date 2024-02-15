@@ -57,7 +57,7 @@ export const Cart = () => {
       }`}
     >
       <div
-        className="backdrop-blur-sm absolute bg-black/30  top-0 left-0 h-full w-full"
+        className="backdrop-blur-sm absolute bg-black/30  top-0 left-0 h-full w-full transition-all"
         onClick={() => dispatch(closeCart())}
       ></div>
       <div className="absolute top-4 right-4 bottom-4 left-4 bg-white p-8 lg:right-12 lg:top-12 lg:bottom-12 lg:left-auto lg:w-[500px]">

@@ -32,10 +32,7 @@ export const CallToAction = ({
             start: "top 50%",
           },
         })
-        .from(container.current, {
-          transformOrigin: "50% 0%",
-          scaleY: 0,
-        })
+        .from(container.current, {})
         .from(".section-title", {})
         .from("h2", {}, "<")
         .from("p", {}, "<")
@@ -48,7 +45,7 @@ export const CallToAction = ({
   return (
     <section ref={container}>
       <div className="main__container bg-aqua-haze p-10 lg:grid lg:grid-cols-4 lg:p-20">
-        <div className="section-title uppercase mb-4 text-sm">Contact</div>
+        <div className="section-title uppercase mb-4">Contact</div>
         <div className="lg:col-span-3">
           <h2 className="text-48px mb-6 lg:text-64px">{title}</h2>
           <p className="text-xl  mb-10 lg:w-2/3 lg:mb-12">{subtitle}</p>

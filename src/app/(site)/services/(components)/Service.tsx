@@ -6,7 +6,7 @@ export const Service = ({ service }: { service: ServicePayload }) => {
   const { _id, name, slug, coverImage, headline, features, cta } = service;
 
   return (
-    <div key={_id} className="grid gap-8 lg:gap-16" id={slug}>
+    <div className="service grid gap-8 lg:gap-16" id={slug}>
       <SectionHeading title={name} />
 
       <div className="relative grid gap-12 items-start lg:flex lg:flex-row-reverse">
@@ -28,9 +28,7 @@ export const Service = ({ service }: { service: ServicePayload }) => {
                 key={feature._key}
                 className="grid gap-4 md:grid-cols-4 xl:gap-12"
               >
-                <h4 className="text-xs uppercase !leading-[28px]">
-                  {feature.title}
-                </h4>
+                <h4 className="uppercase !leading-[28px]">{feature.title}</h4>
                 <p className="md:col-span-3">{feature.description}</p>
               </div>
             ))}
@@ -39,7 +37,7 @@ export const Service = ({ service }: { service: ServicePayload }) => {
 
         {/* Call to action */}
         <div
-          className="grid gap-4 items-start justify-items-start p-10 lg:min-w-[33%]  xl:p-12 lg:sticky lg:top-8"
+          className="service__cat grid gap-4 items-start justify-items-start p-10 lg:min-w-[33%]  xl:p-12 lg:sticky lg:top-8"
           style={{
             backgroundColor: `${cta.background ? cta.background : "#F9F9F9"}`,
           }}

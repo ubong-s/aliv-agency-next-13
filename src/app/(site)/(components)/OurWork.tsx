@@ -17,8 +17,7 @@ export const OurWork = ({ projects }: { projects: ProjectsPayload[] }) => {
         gsap.set(card.lastChild, { opacity: 0, yPercent: -100 });
 
         gsap.from(card, {
-          transformOrigin: "0% 50%",
-          scaleY: 0,
+          yPercent: 50,
           opacity: 0,
           scrollTrigger: {
             trigger: card,

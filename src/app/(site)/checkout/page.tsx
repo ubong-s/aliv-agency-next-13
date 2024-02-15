@@ -52,7 +52,7 @@ export default function CheckoutPage() {
           {clientSecret && (
             // @ts-ignore
             <Elements options={options} stripe={stripePromise}>
-              <h3>Shipping address</h3>
+              <h3 className="mb-4">Shipping address</h3>
               <AddressElement
                 options={{ mode: "shipping", allowedCountries: ["US"] }}
 

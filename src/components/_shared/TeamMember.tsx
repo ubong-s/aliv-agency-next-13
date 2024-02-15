@@ -24,7 +24,7 @@ export const TeamMember = ({
             height={546}
             className="object-cover w-full h-auto"
           />
-          <div className="absolute top-[70%] left-0 h-[30%] w-full bg-gradient-to-b from-transparent to-black"></div>
+          <div className="absolute top-[0%] left-0 h-[100%] w-full bg-gradient-to-b from-transparent to-black/40"></div>
         </div>
         {Socials && (
           <ul className="social absolute right-4 bottom-4 flex gap-3 lg:right-6 lg:bottom-6 lg:opacity-0  lg:translate-y-52 group-hover:lg:opacity-100 group-hover:lg:translate-y-0 transition-all">
@@ -51,9 +51,9 @@ export const TeamMember = ({
       </div>
       <div
         id={`name-${index}`}
-        className=" absolute -bottom-12 flex justify-between items-center w-full"
+        className=" absolute -bottom-16 flex justify-between items-center w-full"
       >
-        <h4 className="text-xs md:text-sm lg:text-base">{name}</h4>
+        <h4 className="">{name}</h4>
         <Badge text={expertise} />
       </div>
     </li>

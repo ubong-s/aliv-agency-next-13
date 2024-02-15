@@ -59,7 +59,7 @@ export const Services = ({
               <p className="text-muted pb-4">{text}</p>
               <Link
                 href={`/services/#${slug}`}
-                className="text-sm inline-block capitalize pb-1 border-b border-b-ablack self-end"
+                className="inline-block capitalize pb-1 border-b border-b-ablack self-end"
               >
                 About {name.split(" ")[1]}
               </Link>

@@ -11,17 +11,13 @@ export const TopBar = () => {
     <div className="border-b border-b-concrete">
       <div className="main__container flex justify-end items-center py-1 gap-4">
         {session?.user ? (
-          <Link href={`/user/${slug}`} className="text-xs">
-            {session.user.name}
-          </Link>
+          <Link href={`/user/${slug}`}>{session.user.name}</Link>
         ) : (
-          <Link href={"/auth/login"} className="text-xs">
-            Login
-          </Link>
+          <Link href={"/auth/login"}>Login</Link>
         )}
 
         {session && session.user.email && (
-          <button type="button" onClick={() => signOut()} className="text-xs">
+          <button type="button" onClick={() => signOut()}>
             Logout
           </button>
         )}

@@ -42,7 +42,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 body {
-  @apply font-manrope font-light tracking-wider m-auto p-4 lg:p-12 overflow-x-hidden z-[2] bg-white max-w-[1920px];
+  @apply font-manrope font-normal tracking-wider m-auto p-4 lg:p-12 overflow-x-hidden z-[2] bg-white max-w-[1920px] text-sm lg:text-base xl:text-lg;
 }
 
 body::before {
@@ -55,12 +55,11 @@ body::after {
 
 body.menuCartOpen {
   height: 100vh !important;
-  overflow-y: clip;
 }
 
 p,
 a {
-  @apply font-manrope  text-sm lg:text-base !leading-[28px];
+  @apply font-manrope   !leading-[28px];
 }
 
 h1,
