@@ -73,7 +73,7 @@ export const AboutHero = ({ data }: AboutHeroProps) => {
           <h2 className="text-[45px] leading-[50px] my-6 lg:text-6xl lg:!leading-[70px] 2xl:text-7xl ">
             {heroHighlight}
           </h2>
-          <p className="mb-12 text-lg lg:text-2xl lg:mb-20 xl:mb-32">
+          <p className="mb-12 text-lg lg:text-2xl lg:mb-20 lg:!leading-relaxed xl:mb-32">
             {heroDescription}
           </p>
 

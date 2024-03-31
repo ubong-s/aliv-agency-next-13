@@ -9,7 +9,7 @@ export const ContactForm = () => {
           <h2 className="text-[52px] my-6 lg:text-7xl lg:!leading-[105px] 2xl:text-8xl ">
             {`Let's Talk Branding`}
           </h2>
-          <p className="mb-12 text-lg lg:text-2xl lg:mb-20 xl:mb-32">
+          <p className="mb-12 text-lg lg:text-2xl lg:mb-20 lg:!leading-relaxed xl:mb-32">
             {`From strategy to execution, we're here to help you achieve your
             branding goals.`}
           </p>

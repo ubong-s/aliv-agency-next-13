@@ -50,7 +50,7 @@ export const ServicesHero = ({
           <br />
           Our Expertise, Your Success
         </h2>
-        <p className="max-w-2xl mb-8 text-lg lg:text-2xl lg:mb-12">
+        <p className="max-w-2xl mb-8 text-lg lg:text-2xl lg:mb-12 lg:!leading-relaxed">
           From brand strategy to creative execution, discover how our services
           can elevate your brand
         </p>

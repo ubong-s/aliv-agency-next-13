@@ -39,7 +39,7 @@ export const JobsHero = () => {
           <br />
           Career with Aliv
         </h2>
-        <p className="max-w-2xl mb-8 text-lg lg:text-2xl lg:!leading-8 lg:mb-12">
+        <p className="max-w-2xl mb-8 text-lg lg:text-2xl lg:!leading-relaxed lg:mb-12">
           Discover opportunities to grow your career and make an impact in the
           branding industry.
         </p>

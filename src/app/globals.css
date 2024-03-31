@@ -42,7 +42,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 body {
-  @apply font-manrope font-normal tracking-wider m-auto p-4 lg:p-12 overflow-x-hidden z-[2] bg-white max-w-[1920px] text-sm lg:text-base xl:text-lg;
+  @apply font-manrope font-normal tracking-wider m-auto p-4 lg:p-12 overflow-x-hidden z-[2] bg-white max-w-[1920px] text-sm lg:text-base;
 }
 
 body::before {
