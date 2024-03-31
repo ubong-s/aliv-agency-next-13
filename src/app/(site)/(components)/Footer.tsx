@@ -6,7 +6,7 @@ import Link from "next/link";
 import { fillerList, infoList, menuList } from "@/constants/menuList";
 import { FooterColumn } from "./FooterColumn";
 import { FooterCopyright } from "./FooterCopyright";
-import { SocialIconsLight } from "@/constants/socialIcons";
+import { SocialIconsDark, SocialIconsLight } from "@/constants/socialIcons";
 
 export const Footer = () => {
   return (
@@ -25,7 +25,7 @@ export const Footer = () => {
                     <Link href={link}>
                       <Image
                         //@ts-ignore
-                        src={SocialIconsLight[text]}
+                        src={SocialIconsDark[text]}
                         alt={text}
                         width={36}
                         height={36}
